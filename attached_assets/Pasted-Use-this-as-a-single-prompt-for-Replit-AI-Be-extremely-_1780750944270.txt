@@ -1,0 +1,590 @@
+Use this as a single prompt for Replit AI. Be extremely specific because Replit performs much better when given architecture, design, animations, SEO requirements, and content requirements upfront.
+
+---
+
+# REPLIT AI PROMPT
+
+Build a premium, production-ready automotive locksmith and auto key programming website for a Pakistani business called:
+
+**Shameen Lock Master**
+
+Business Location:
+Islamabad, Pakistan
+
+Service Areas:
+Islamabad, Rawalpindi, Bahria Town, DHA, Gulberg Green, Taxila, Wah Cantt, and nearby areas.
+
+Primary Goal:
+
+* Generate phone calls
+* Generate WhatsApp leads
+* Build trust and professionalism
+* Rank on Google for local searches
+* Showcase expertise in automotive locksmith and key programming services
+
+---
+
+# DESIGN REFERENCE
+
+Use this website as the primary design inspiration:
+
+[https://carfix-tnc.webflow.io/](https://carfix-tnc.webflow.io/)
+
+DO NOT COPY.
+
+Instead create a modern premium version inspired by:
+
+* Layout structure
+* Typography hierarchy
+* Luxury spacing
+* Automotive industry aesthetics
+* High-end service presentation
+* Dark modern design
+* Large visual sections
+* Interactive animations
+
+The final result should feel more premium and modern than the reference.
+
+Think:
+
+* Apple-level smoothness
+* Framer-level animations
+* Award-winning agency website quality
+* Modern automotive service branding
+
+---
+
+# TECH STACK
+
+Use:
+
+* Next.js 15 App Router
+* TypeScript
+* Tailwind CSS
+* shadcn/ui
+* Framer Motion
+* GSAP
+* Lenis Smooth Scroll
+* React Icons
+* Next SEO
+* Responsive Design
+* Mobile First
+
+Architecture must be production-ready.
+
+---
+
+# DESIGN SYSTEM
+
+Color Palette:
+
+Background:
+#0B0B0B
+
+Secondary Background:
+#111111
+
+Accent Orange:
+#F97316
+
+Accent Gold:
+#D4A017
+
+Text:
+#FFFFFF
+
+Muted Text:
+#A1A1AA
+
+Borders:
+rgba(255,255,255,0.08)
+
+---
+
+# TYPOGRAPHY
+
+Use modern premium fonts:
+
+Headings:
+Space Grotesk
+
+Body:
+Inter
+
+Alternative:
+Plus Jakarta Sans
+
+Large bold typography.
+
+Strong visual hierarchy.
+
+Luxury automotive feel.
+
+---
+
+# ANIMATION REQUIREMENTS
+
+Use advanced modern animations.
+
+Implement:
+
+## Hero
+
+* GSAP text reveal
+* Character stagger animation
+* Blur-to-clear animation
+* Floating background elements
+* Smooth entrance effects
+
+## Scroll Animations
+
+* Section reveal
+* Fade up
+* Scale in
+* Horizontal movement
+* Staggered cards
+
+## Services Section
+
+* Sticky scrolling cards
+* Card stacking effect
+* Pinning effect
+* Smooth transitions
+
+## About Section
+
+* Image parallax
+* Text reveal on scroll
+
+## Statistics
+
+* Count-up animations
+
+## Gallery
+
+* Hover zoom
+* Smooth image transitions
+
+## CTA Sections
+
+* Animated background gradients
+* Magnetic buttons
+
+## Navigation
+
+* Smooth floating navbar
+* Hide on scroll down
+* Show on scroll up
+
+## Entire Website
+
+* Lenis smooth scrolling
+* 60fps optimized animations
+
+---
+
+# WEBSITE PAGES
+
+Create all pages.
+
+---
+
+# PAGE 1 - HOME
+
+Sections:
+
+Hero
+
+Why Choose Us
+
+Services Overview
+
+Our Expertise
+
+Brands We Support
+
+Process
+
+Testimonials
+
+Coverage Areas
+
+FAQ
+
+Gallery Preview
+
+Final CTA
+
+Contact
+
+---
+
+# PAGE 2 - ABOUT
+
+Sections:
+
+Company Story
+
+Mission
+
+Experience
+
+Equipment & Technology
+
+Why Clients Trust Us
+
+Coverage Areas
+
+CTA
+
+---
+
+# PAGE 3 - SERVICES
+
+Create dedicated service cards for:
+
+Immobilizer Keys
+
+Smart Key Programming
+
+Push Start Programming
+
+Remote Key Programming
+
+Remote Battery Replacement
+
+Car Key Duplication
+
+Lost Key Service
+
+Vehicle Lockout Service
+
+Door Lock Repair
+
+Door Lock Replacement
+
+Ignition Repair
+
+Ignition Replacement
+
+Power Window Repair
+
+Power Window Replacement
+
+Sunroof Repair
+
+Digital Locker Unlocking
+
+Digital Locker Key Creation
+
+YBR Yamaha Key Making
+
+Hybrid Vehicle Smart Keys
+
+Emergency Locksmith Service
+
+---
+
+# INDIVIDUAL SEO SERVICE PAGES
+
+Create SEO pages for:
+
+/services/car-key-duplication
+
+/services/immobilizer-key-programming
+
+/services/smart-key-programming
+
+/services/push-start-key-programming
+
+/services/lost-car-key-service
+
+/services/vehicle-lockout
+
+/services/ignition-repair
+
+/services/door-lock-repair
+
+/services/power-window-repair
+
+/services/sunroof-repair
+
+Each page should have:
+
+Hero
+
+Description
+
+Benefits
+
+Process
+
+FAQ
+
+CTA
+
+Local SEO content
+
+---
+
+# PAGE 4 - GALLERY
+
+Display:
+
+Shop Images
+
+Programming Equipment
+
+Completed Jobs
+
+Vehicle Keys
+
+Smart Keys
+
+Remote Programming
+
+Lock Repairs
+
+Before/After
+
+Use masonry layout.
+
+Advanced hover effects.
+
+---
+
+# PAGE 5 - REVIEWS
+
+Modern testimonials layout.
+
+Google review style cards.
+
+Ratings section.
+
+Trust indicators.
+
+---
+
+# PAGE 6 - CONTACT
+
+Include:
+
+Phone Numbers:
+
+0345-7507053
+
+0308-5556179
+
+WhatsApp Button
+
+Google Maps Embed
+
+Address:
+
+Shop #1-2 Auto Market F-10/4 Markaz Islamabad
+
+Business Hours
+
+Inquiry Form
+
+---
+
+# HOMEPAGE CONTENT
+
+Hero Heading:
+
+Professional Auto Key Programming & Locksmith Services in Islamabad & Rawalpindi
+
+Subheading:
+
+Lost your car key? Need smart key programming, immobilizer solutions, lock repair, ignition repair or vehicle unlocking services? We provide reliable automotive locksmith services for all vehicle brands.
+
+Buttons:
+
+Call Now
+
+WhatsApp Now
+
+---
+
+# TRUST BADGES
+
+Show:
+
+All Vehicle Brands Supported
+
+Same Day Service
+
+Advanced Programming Tools
+
+Emergency Assistance
+
+Experienced Technicians
+
+Local Islamabad Business
+
+---
+
+# BRANDS SECTION
+
+Create logos/cards for:
+
+Toyota
+
+Honda
+
+Suzuki
+
+KIA
+
+Hyundai
+
+BMW
+
+Audi
+
+Mercedes
+
+Nissan
+
+Lexus
+
+Mitsubishi
+
+MG
+
+Changan
+
+Proton
+
+Haval
+
+---
+
+# LOCAL SEO REQUIREMENTS
+
+Optimize entire website for:
+
+Car Key Maker Islamabad
+
+Auto Locksmith Islamabad
+
+Smart Key Programming Islamabad
+
+Lost Car Key Islamabad
+
+Immobilizer Key Islamabad
+
+Car Key Duplication Islamabad
+
+Vehicle Lockout Islamabad
+
+Car Remote Repair Islamabad
+
+Auto Locksmith Rawalpindi
+
+Smart Key Programming Rawalpindi
+
+Lost Car Key Rawalpindi
+
+---
+
+# IMAGES
+
+Generate premium realistic images for:
+
+Luxury vehicle key programming
+
+Automotive locksmith working
+
+Smart key replacement
+
+Car lock repair
+
+Vehicle unlocking
+
+Programming equipment
+
+Automotive workshop
+
+Modern key duplication
+
+Islamabad auto market environment
+
+Images should look realistic, commercial-grade, and premium.
+
+No cartoons.
+
+No generic stock photos.
+
+---
+
+# CONVERSION OPTIMIZATION
+
+Add:
+
+Floating WhatsApp Button
+
+Sticky Call Button on Mobile
+
+Quick Contact Widget
+
+Lead Capture Form
+
+Google Maps CTA
+
+Strong CTA after every major section
+
+---
+
+# PERFORMANCE
+
+Requirements:
+
+Lighthouse 95+
+
+SEO 100
+
+Performance 95+
+
+Accessibility 95+
+
+Best Practices 100
+
+Use image optimization.
+
+Use lazy loading.
+
+Use code splitting.
+
+Use server components where possible.
+
+---
+
+# FINAL OUTPUT
+
+Generate:
+
+Complete Next.js project
+
+Production-ready code
+
+Clean folder structure
+
+Reusable components
+
+Responsive design
+
+Advanced GSAP animations
+
+SEO optimization
+
+Professional content
+
+Premium UI/UX
+
+No placeholders
+
+No dummy sections
+
+Everything should be ready for deployment on Vercel.

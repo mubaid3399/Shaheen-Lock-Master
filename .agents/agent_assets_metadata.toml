@@ -1,0 +1,62 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "29_rKm8B0weVk5qOzpuTD"
+uri = "file://artifacts/shameen-lock-master/src/assets/hero-bg.png"
+type = "image"
+title = "hero automotive key programming"
+
+[[generated]]
+id = "b3KIvAY6O0toLS0Ai123M"
+uri = "file://artifacts/shameen-lock-master/src/assets/about-workshop.png"
+type = "image"
+title = "professional locksmith workshop"
+
+[[generated]]
+id = "cbEFw3Asg70Y5JY_aa8FE"
+uri = "file://artifacts/shameen-lock-master/src/assets/gallery-1.png"
+type = "image"
+title = "smart key close up"
+
+[[generated]]
+id = "1yDdityKKhO7i7Hh5XoLi"
+uri = "file://artifacts/shameen-lock-master/src/assets/gallery-2.png"
+type = "image"
+title = "key cutting machine"
+
+[[generated]]
+id = "hc3VXwHtnLrBAF0ibTQDa"
+uri = "file://artifacts/shameen-lock-master/src/assets/gallery-3.png"
+type = "image"
+title = "mechanic hand with key"
+
+[[generated]]
+id = "3Byd48vNqIPdKtSUYWSJ7"
+uri = "file://artifacts/shameen-lock-master/src/assets/gallery-4.png"
+type = "image"
+title = "car door lock repair"
+
+[[generated]]
+id = "M0MubJhHEF4fTHgriAVzR"
+uri = "file://artifacts/shameen-lock-master/src/assets/gallery-5.png"
+type = "image"
+title = "diagnostic tool screen"
+
+[[generated]]
+id = "EqKvIpIlQ0OK7QP2bAJSm"
+uri = "file://artifacts/shameen-lock-master/src/assets/gallery-6.png"
+type = "image"
+title = "ignition repair"
+
+[[generated]]
+id = "t3CnDlvLwasGMhNurRfQ_"
+uri = "file://artifacts/shameen-lock-master/src/assets/gallery-7.png"
+type = "image"
+title = "luxury car keys"
+
+[[generated]]
+id = "eyOgou8Je7n9hoPt39TiX"
+uri = "file://artifacts/shameen-lock-master/src/assets/gallery-8.png"
+type = "image"
+title = "soldering circuit board"
