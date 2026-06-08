@@ -9,6 +9,7 @@ import { ShieldCheck, Zap, Wrench, Clock, Star, MapPin, CheckCircle, ArrowRight,
 import { SEO } from "@/components/SEO";
 
 import heroBg from "@/assets/hero-bg.png";
+import expertiseBg from "@/assets/expertise-bg.png";
 import gallery1 from "@/assets/gallery-1.png";
 import gallery2 from "@/assets/gallery-2.png";
 import gallery3 from "@/assets/gallery-3.png";
@@ -16,18 +17,42 @@ import gallery4 from "@/assets/gallery-4.png";
 import gallery5 from "@/assets/gallery-5.png";
 import gallery6 from "@/assets/gallery-6.png";
 
+// Brand Logos
+import logoToyota from "@/assets/brands/toyota.png";
+import logoHonda from "@/assets/brands/honda.png";
+import logoSuzuki from "@/assets/brands/suzuki.png";
+import logoKia from "@/assets/brands/kia.png";
+import logoHyundai from "@/assets/brands/hyundai.png";
+import logoBmw from "@/assets/brands/bmw.png";
+import logoAudi from "@/assets/brands/audi.png";
+import logoMercedes from "@/assets/brands/mercedes.png";
+import logoNissan from "@/assets/brands/nissan.png";
+import logoLexus from "@/assets/brands/lexus.png";
+import logoMitsubishi from "@/assets/brands/mitsubishi.png";
+import logoMg from "@/assets/brands/mg.png";
+import logoChangan from "@/assets/brands/changan.png";
+import logoProton from "@/assets/brands/proton.png";
+import logoHaval from "@/assets/brands/haval.png";
+
+// Customer Avatars
+import customer1 from "@/assets/customer-1.png";
+import customer2 from "@/assets/customer-2.png";
+import customer3 from "@/assets/customer-3.png";
+
+
 function Counter({ end, suffix = "" }: { end: number, suffix?: string }) {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   useEffect(() => {
+    let timer: any;
     if (isInView) {
       let start = 0;
       const duration = 2000;
       const increment = end / (duration / 16);
       
-      const timer = setInterval(() => {
+      timer = setInterval(() => {
         start += increment;
         if (start >= end) {
           setCount(end);
@@ -36,13 +61,56 @@ function Counter({ end, suffix = "" }: { end: number, suffix?: string }) {
           setCount(Math.floor(start));
         }
       }, 16);
-      
-      return () => clearInterval(timer);
     }
+    return () => {
+      if (timer) clearInterval(timer);
+    };
   }, [isInView, end]);
 
   return <span ref={ref}>{count}{suffix}</span>;
 }
+
+const brandLogos = [
+  { name: "Toyota", img: logoToyota },
+  { name: "Honda", img: logoHonda },
+  { name: "Suzuki", img: logoSuzuki },
+  { name: "KIA", img: logoKia },
+  { name: "Hyundai", img: logoHyundai },
+  { name: "BMW", img: logoBmw },
+  { name: "Audi", img: logoAudi },
+  { name: "Mercedes", img: logoMercedes },
+  { name: "Nissan", img: logoNissan },
+  { name: "Lexus", img: logoLexus },
+  { name: "Mitsubishi", img: logoMitsubishi },
+  { name: "MG", img: logoMg },
+  { name: "Changan", img: logoChangan },
+  { name: "Proton", img: logoProton },
+  { name: "Haval", img: logoHaval }
+];
+
+const reviews = [
+  {
+    name: "Faisal Rehman",
+    role: "BMW 5-Series Owner",
+    img: customer1,
+    text: "Lost my only smart key for my BMW and was panicking. Shaheen Lock Master came to my location in Bahria Town, diagnosed the vehicle, and programmed a brand new key in less than an hour. Half the price of what the dealership quoted. Extremely professional!",
+    stars: 5
+  },
+  {
+    name: "Ayesha Malik",
+    role: "Honda Civic Owner",
+    img: customer2,
+    text: "Locked my keys inside the car late at night. Shaheen Lock Master arrived within 25 minutes of calling. They opened the car in just a few minutes without causing a single scratch. Highly recommend their emergency 24/7 service!",
+    stars: 5
+  },
+  {
+    name: "Kamran Khan",
+    role: "Toyota Fortuner Owner",
+    img: customer3,
+    text: "Wanted a spare key fob for my Fortuner. Shaheen Lock Master cut the blade and programmed the remote perfectly. Everything works flawlessly, buttons respond fast. Friendly staff and fast turnaround.",
+    stars: 5
+  }
+];
 
 export default function Home() {
   const headlineRef = useRef<HTMLHeadingElement>(null);
@@ -72,20 +140,7 @@ export default function Home() {
       delay: 0.2
     });
 
-    // Sticky cards animation
-    if (cardsRef.current) {
-      const cards = gsap.utils.toArray(".sticky-card");
-      cards.forEach((card: any, i) => {
-        ScrollTrigger.create({
-          trigger: card,
-          start: "top top+=100",
-          endTrigger: cardsRef.current,
-          end: "bottom bottom",
-          pin: true,
-          pinSpacing: false,
-        });
-      });
-    }
+
 
   }, []);
 
@@ -123,15 +178,7 @@ export default function Home() {
         
         <div className="container mx-auto px-4 md:px-6 relative z-20">
           <div className="max-w-4xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6"
-            >
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              Islamabad's Most Trusted Auto Locksmith
-            </motion.div>
+
             
             <h1 
               ref={headlineRef}
@@ -189,8 +236,20 @@ export default function Home() {
       </section>
 
       {/* SERVICES PREVIEW */}
-      <section className="py-24 lg:py-32 relative" ref={cardsRef}>
-        <div className="container mx-auto px-4 md:px-6">
+      <section className="py-24 lg:py-32 relative overflow-hidden" ref={cardsRef}>
+        {/* Stuck Background Image */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          <div 
+            className="absolute inset-0 w-full h-full bg-cover bg-center bg-fixed opacity-45 select-none pointer-events-none" 
+            style={{ backgroundImage: `url(${expertiseBg})` }} 
+          />
+          {/* Gradient overlays to fade edges and ensure legibility */}
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background opacity-75" />
+          <div className="absolute inset-0 bg-background/25" />
+        </div>
+
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div>
               <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">Our Expertise</h2>
@@ -201,14 +260,16 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
             {services.map((service, i) => (
-              <div key={i} className={`sticky-card group relative bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition-colors duration-300 z-[${i}]`} style={{ top: `calc(100px + ${i * 20}px)` }}>
-                <div className="mb-6 bg-background rounded-xl w-16 h-16 flex items-center justify-center border border-border group-hover:scale-110 transition-transform duration-300">
-                  {service.icon}
+              <div key={i} className="group relative bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition-all duration-300 flex flex-col justify-between h-full hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/5">
+                <div>
+                  <div className="mb-6 bg-background rounded-xl w-16 h-16 flex items-center justify-center border border-border group-hover:scale-110 transition-transform duration-300">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-xl font-display font-semibold mb-3">{service.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-6">{service.desc}</p>
                 </div>
-                <h3 className="text-xl font-display font-semibold mb-3">{service.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{service.desc}</p>
               </div>
             ))}
           </div>
@@ -259,18 +320,27 @@ export default function Home() {
       </section>
 
       {/* BRANDS MARQUEE */}
-      <section className="py-16 overflow-hidden">
-        <div className="container mx-auto px-4 md:px-6 mb-8 text-center">
-          <p className="text-sm font-medium text-muted-foreground uppercase tracking-widest">Supporting Premium Brands</p>
+      <section className="py-16 overflow-hidden bg-background/50 border-y border-border/50">
+        <div className="container mx-auto px-4 md:px-6 mb-10 text-center">
+          <p className="text-xs font-semibold text-primary uppercase tracking-widest">Supporting Premium Brands</p>
         </div>
-        <div className="flex whitespace-nowrap opacity-60 hover:opacity-100 transition-opacity duration-500">
+        <div className="flex whitespace-nowrap opacity-75 hover:opacity-100 transition-opacity duration-300">
           <motion.div 
             animate={{ x: ["0%", "-50%"] }}
-            transition={{ ease: "linear", duration: 25, repeat: Infinity }}
+            transition={{ ease: "linear", duration: 30, repeat: Infinity }}
             className="flex items-center gap-16 px-8"
           >
-            {["Toyota", "Honda", "Suzuki", "KIA", "Hyundai", "BMW", "Audi", "Mercedes", "Nissan", "Lexus", "Mitsubishi", "MG", "Changan", "Proton", "Haval", "Toyota", "Honda", "Suzuki", "KIA", "Hyundai", "BMW", "Audi", "Mercedes", "Nissan", "Lexus", "Mitsubishi", "MG", "Changan", "Proton", "Haval"].map((brand, i) => (
-              <span key={i} className="text-2xl font-display font-bold text-foreground/70 tracking-wider uppercase shrink-0">{brand}</span>
+            {[...brandLogos, ...brandLogos].map((brand, i) => (
+              <div key={i} className="inline-flex items-center gap-3 shrink-0 px-4 md:px-6 transition-transform hover:scale-105 duration-300 group cursor-pointer">
+                <img 
+                  src={brand.img} 
+                  alt={`${brand.name} logo`} 
+                  className="h-7 md:h-9 w-auto object-contain grayscale brightness-200 contrast-75 opacity-50 group-hover:opacity-100 group-hover:grayscale-0 group-hover:brightness-100 group-hover:contrast-100 transition-all duration-300 select-none pointer-events-none" 
+                />
+                <span className="text-sm md:text-base font-display font-semibold text-muted-foreground group-hover:text-foreground transition-colors duration-300 uppercase tracking-wider">
+                  {brand.name}
+                </span>
+              </div>
             ))}
           </motion.div>
         </div>
@@ -329,10 +399,50 @@ export default function Home() {
         </div>
       </section>
 
+      {/* CLIENT REVIEWS */}
+      <section className="py-24 lg:py-32 bg-background border-t border-border relative overflow-hidden">
+        {/* Soft glowing backdrop */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+        
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">What Our Customers Say</h2>
+            <p className="text-muted-foreground text-lg">Real reviews from car owners in Islamabad & Rawalpindi.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {reviews.map((review, i) => (
+              <div key={i} className="group bg-card border border-border rounded-2xl p-8 flex flex-col justify-between hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/5">
+                <div>
+                  {/* Star Rating */}
+                  <div className="flex gap-1 mb-6">
+                    {[...Array(review.stars)].map((_, starIndex) => (
+                      <Star key={starIndex} className="w-5 h-5 fill-primary text-primary" />
+                    ))}
+                  </div>
+                  {/* Testimonial Text */}
+                  <p className="text-muted-foreground leading-relaxed mb-8 italic">"{review.text}"</p>
+                </div>
+                {/* Author Info */}
+                <div className="flex items-center gap-4 border-t border-border/50 pt-6">
+                  <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-primary/20 shrink-0">
+                    <img src={review.img} alt={review.name} className="w-full h-full object-cover animate-fade-in" />
+                  </div>
+                  <div>
+                    <h4 className="font-display font-bold text-foreground">{review.name}</h4>
+                    <p className="text-xs text-muted-foreground">{review.role}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ & COVERAGE */}
       <section className="py-24 bg-card border-t border-border">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             
             {/* FAQ */}
             <div>
@@ -360,7 +470,7 @@ export default function Home() {
             {/* Coverage Areas */}
             <div>
               <h2 className="text-3xl font-display font-bold mb-8">Coverage Areas</h2>
-              <div className="bg-background border border-border rounded-2xl p-8 h-full">
+              <div className="bg-background border border-border rounded-2xl p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <MapPin className="w-6 h-6 text-primary" />
                   <h3 className="text-xl font-bold">Serving Twin Cities</h3>

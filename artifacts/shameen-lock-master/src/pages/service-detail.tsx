@@ -4,9 +4,49 @@ import { CheckCircle2, PhoneCall, ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
 import { SiWhatsapp } from "react-icons/si";
 
+// Gallery Category Images for Background
+import gallery2 from "@/assets/gallery-2.png"; // Key Creation / Duplication
+import gallery3 from "@/assets/gallery-3.png"; // Key Programming
+import gallery4 from "@/assets/gallery-4.png"; // Locks & Ignition
+import gallery5 from "@/assets/gallery-5.png"; // Security & Electronics
+import gallery8 from "@/assets/gallery-8.png"; // Emergency & Maintenance
+
+const bgImages: Record<string, string> = {
+  // Key Programming
+  "smart-key-programming": gallery3,
+  "push-start-programming": gallery3,
+  "remote-key-programming": gallery3,
+  "hybrid-vehicle-smart-keys": gallery3,
+  
+  // Key Creation & Duplication
+  "car-key-duplication": gallery2,
+  "lost-key-service": gallery2,
+  "ybr-yamaha-key-making": gallery2,
+  "digital-locker-key-creation": gallery2,
+  
+  // Locks & Ignition
+  "door-lock-repair": gallery4,
+  "door-lock-replacement": gallery4,
+  "ignition-repair": gallery4,
+  "ignition-replacement": gallery4,
+  
+  // Security & Electronics
+  "immobilizer-keys": gallery5,
+  "power-window-repair": gallery5,
+  "power-window-replacement": gallery5,
+  "sunroof-repair": gallery5,
+  
+  // Emergency & Maintenance
+  "vehicle-lockout-service": gallery8,
+  "emergency-locksmith-service": gallery8,
+  "remote-battery-replacement": gallery8,
+  "digital-locker-unlocking": gallery8,
+};
+
 export default function ServiceDetail() {
   const { id } = useParams();
   const title = id ? id.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') : "Service Details";
+  const bgImage = id ? bgImages[id] : null;
   
   return (
     <>
@@ -15,7 +55,20 @@ export default function ServiceDetail() {
         description={`Professional ${title.toLowerCase()} services in Islamabad and Rawalpindi. Rapid response, dealer-level equipment, expert technicians.`}
       />
       
-      <section className="pt-32 pb-24 border-b border-border bg-card/30 relative">
+      <section className="pt-32 pb-24 border-b border-border bg-card/10 relative overflow-hidden">
+        {/* Dynamic Background Image based on Service Category */}
+        {bgImage && (
+          <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+            <img 
+              src={bgImage} 
+              alt={title} 
+              className="w-full h-full object-cover opacity-20 select-none pointer-events-none" 
+            />
+            {/* Dark gradient mask for premium blending and text readability */}
+            <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-transparent to-background" />
+          </div>
+        )}
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <Link href="/services" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary mb-8 transition-colors text-sm font-medium">
             <ArrowLeft className="w-4 h-4" /> Back to Services

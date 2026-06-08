@@ -11,8 +11,12 @@ interface AppLayoutProps {
 export function AppLayout({ children }: AppLayoutProps) {
   return (
     <div className="relative min-h-[100dvh] flex flex-col bg-background selection:bg-primary/30 selection:text-white">
+      {/* GLOBAL BACKGROUND MESH GRID */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/5 via-background to-background pointer-events-none z-0" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none z-0" />
+
       <Navbar />
-      <main className="flex-1">
+      <main className="flex-1 relative z-10">
         {children}
       </main>
       <Footer />
@@ -29,19 +33,6 @@ export function AppLayout({ children }: AppLayoutProps) {
         <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full border-2 border-background animate-pulse" />
       </a>
 
-      {/* Mobile Sticky Call Button */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 p-4 bg-background/80 backdrop-blur-lg border-t border-border md:hidden">
-        <a
-          href="tel:03457507053"
-          className="flex items-center justify-center gap-2 w-full bg-primary text-primary-foreground py-3.5 rounded-xl font-bold text-[15px] shadow-lg shadow-primary/20"
-        >
-          <PhoneCall className="w-5 h-5" />
-          EMERGENCY CALL: 0345-7507053
-        </a>
-      </div>
-      
-      {/* Spacer for mobile sticky button */}
-      <div className="h-20 md:hidden" />
     </div>
   );
 }

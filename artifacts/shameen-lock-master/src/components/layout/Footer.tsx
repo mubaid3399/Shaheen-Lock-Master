@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { Key, MapPin, Phone, Clock, Mail } from "lucide-react";
-import { SiWhatsapp } from "react-icons/si";
+import { SiWhatsapp, SiInstagram, SiTiktok, SiFacebook } from "react-icons/si";
+import logoImg from "@/assets/logo & favicon.png";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,13 +12,11 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-12">
           
           <div className="space-y-6">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="bg-primary/10 p-2 rounded-lg">
-                <Key className="w-6 h-6 text-primary" />
-              </div>
-              <div>
-                <span className="font-display font-bold text-xl tracking-tight block leading-none">
-                  Shameen
+            <Link href="/" className="flex items-center gap-3">
+              <img src={logoImg} alt="Logo" className="h-9 w-auto object-contain" />
+              <div className="flex flex-col">
+                <span className="font-display font-bold text-xl tracking-tight block leading-none text-white">
+                  Shaheen
                 </span>
                 <span className="font-display font-medium text-xs text-accent tracking-widest uppercase block mt-0.5">
                   Lock Master
@@ -28,8 +27,17 @@ export function Footer() {
               Islamabad & Rawalpindi's most trusted automotive locksmith. Expert programming, rapid emergency response, and precision key cutting for all premium vehicle brands.
             </p>
             <div className="flex gap-4">
-              <a href="https://wa.me/923457507053" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:bg-[#25D366] hover:text-white transition-colors">
+              <a href="https://wa.me/923457507053" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:bg-[#25D366] hover:text-white transition-colors" aria-label="WhatsApp">
                 <SiWhatsapp className="w-5 h-5" />
+              </a>
+              <a href="https://www.instagram.com/reel/DZIOYCCzx8K/?igsh=MWxjZDUyb2k0c3lm" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:bg-[#E1306C] hover:text-white transition-colors" aria-label="Instagram">
+                <SiInstagram className="w-5 h-5" />
+              </a>
+              <a href="https://www.tiktok.com/@locksmith7053?_r=1&_t=ZS-971CVdEVvku" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:bg-black hover:text-white border border-transparent hover:border-white/10 transition-colors" aria-label="TikTok">
+                <SiTiktok className="w-4.5 h-4.5" />
+              </a>
+              <a href="https://www.facebook.com/share/18TWLxTgK3/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:bg-[#1877F2] hover:text-white transition-colors" aria-label="Facebook">
+                <SiFacebook className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -85,7 +93,7 @@ export function Footer() {
         </div>
 
         <div className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
-          <p>&copy; {currentYear} Shameen Lock Master. All rights reserved.</p>
+          <p>&copy; {currentYear} Shaheen Lock Master. All rights reserved.</p>
           <div className="flex gap-4">
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
