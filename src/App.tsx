@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Switch, Route, Router as WouterRouter } from "wouter";
+import { Switch, Route, useLocation, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -22,9 +22,24 @@ import NotFound from "@/pages/not-found";
 
 const queryClient = new QueryClient();
 
+// Reset scroll position to top on page change
+function ScrollToTop() {
+  const [pathname] = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    if ((window as any).lenis) {
+      (window as any).lenis.scrollTo(0, { immediate: true });
+    }
+  }, [pathname]);
+
+  return null;
+}
+
 function Router() {
   return (
     <AppLayout>
+      <ScrollToTop />
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/about" component={About} />
@@ -53,6 +68,8 @@ function App() {
       infinite: false,
     } as any);
     
+    (window as any).lenis = lenis;
+    
     lenis.on("scroll", ScrollTrigger.update);
     
     gsap.ticker.add((time) => {
@@ -64,6 +81,7 @@ function App() {
     return () => {
       gsap.ticker.remove(lenis.raf);
       lenis.destroy();
+      (window as any).lenis = null;
     };
   }, []);
 
