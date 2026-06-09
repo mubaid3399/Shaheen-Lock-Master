@@ -51,7 +51,7 @@ export default function ServiceDetail() {
   return (
     <>
       <SEO 
-        title={`${title} | Shameen Lock Master`}
+        title={`${title} | Shaheen Lock Master`}
         description={`Professional ${title.toLowerCase()} services in Islamabad and Rawalpindi. Rapid response, dealer-level equipment, expert technicians.`}
       />
       

@@ -29,7 +29,7 @@ export default function Gallery() {
   return (
     <>
       <SEO 
-        title="Gallery | Shameen Lock Master"
+        title="Gallery | Shaheen Lock Master"
         description="View our gallery of professional automotive locksmith equipment, smart keys, and repair work in Islamabad."
       />
       
@@ -52,7 +52,7 @@ export default function Gallery() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                   <span className="font-display font-bold text-white text-lg">{img.alt}</span>
-                  <span className="text-primary text-sm font-medium tracking-widest uppercase mt-1">Shameen Lock Master</span>
+                  <span className="text-primary text-sm font-medium tracking-widest uppercase mt-1">Shaheen Lock Master</span>
                 </div>
               </div>
             ))}

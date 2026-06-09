@@ -7,7 +7,7 @@ export default function About() {
   return (
     <>
       <SEO 
-        title="About Us | Shameen Lock Master"
+        title="About Us | Shaheen Lock Master"
         description="Learn about Islamabad's most trusted automotive locksmith. Years of experience in smart key programming and auto lock repair."
       />
       
@@ -33,7 +33,7 @@ export default function About() {
               <div>
                 <h2 className="text-3xl font-display font-bold mb-4">Our Story</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Shameen Lock Master began with a simple mission: to provide dealership-quality auto locksmith services without the exorbitant wait times and costs. Over the years, vehicles have evolved from simple mechanical locks to sophisticated electronic security systems. We evolved right alongside them. Today, we are proud to be the go-to experts for automotive lock and key solutions in the Twin Cities.
+                  Shaheen Lock Master began with a simple mission: to provide dealership-quality auto locksmith services without the exorbitant wait times and costs. Over the years, vehicles have evolved from simple mechanical locks to sophisticated electronic security systems. We evolved right alongside them. Today, we are proud to be the go-to experts for automotive lock and key solutions in the Twin Cities.
                 </p>
               </div>
               
@@ -89,7 +89,7 @@ export default function About() {
       <section className="py-24 bg-card border-t border-border text-center">
          <div className="container mx-auto px-4 md:px-6 max-w-2xl">
             <h2 className="text-3xl md:text-5xl font-display font-bold mb-6">Experience the Difference</h2>
-            <p className="text-muted-foreground text-lg mb-10">Whether it's an emergency or routine spare key cutting, Shameen Lock Master is ready to assist you.</p>
+            <p className="text-muted-foreground text-lg mb-10">Whether it's an emergency or routine spare key cutting, Shaheen Lock Master is ready to assist you.</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link href="/services" className="bg-primary text-primary-foreground px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-transform">
                 Explore Our Services

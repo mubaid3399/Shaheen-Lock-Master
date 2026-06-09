@@ -165,7 +165,7 @@ export default function Home() {
   return (
     <>
       <SEO 
-        title="Shameen Lock Master | Auto Key Programming Islamabad"
+        title="Shaheen Lock Master | Auto Key Programming Islamabad"
         description="Professional auto key programming, smart keys, and emergency locksmith services in Islamabad and Rawalpindi. All vehicle brands supported."
       />
       
