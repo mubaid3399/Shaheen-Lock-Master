@@ -436,7 +436,7 @@ export default function Contact() {
               </p>
               <div className="flex gap-3 mt-4">
                 <a 
-                  href="https://www.google.com/maps/place/Auto+Market+F-10%2F4/@33.6968412,73.0161647,17z"
+                  href="https://www.google.com/maps/place/Shaheen+lock+master+%D8%B4%D8%A7%D9%87%D9%8A%D9%86+%D9%84%D8%A7%D9%83+%D9%85%D8%A7%D8%B3%D8%B7%D8%B1/@33.6926851,72.9758678,14z"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 text-[11px] font-bold bg-primary text-primary-foreground px-3 py-1.5 rounded-lg shadow-md hover:scale-105 active:scale-95 transition-transform"
@@ -458,7 +458,7 @@ export default function Contact() {
 
         {/* Map Iframe inverted/styled to fit dark theme */}
         <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.4678125438833!2d73.01358987627443!3d33.696841236402224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbe6b7fa1f275%3A0xc48c081e7d0ceb6b!2sAuto%20Market%20F-10%2F4!5e0!3m2!1sen!2s!4v1709664532159!5m2!1sen!2s" 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26557.027166446034!2d72.97586787431638!3d33.6926851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbf26bf03ea81%3A0x830b825c940b4edc!2zU2hhaGVlbiBsb2NrIG1hc3RlciDYtNin24HbjNmGINmE2KfaqSDZhdin2LPZudix!5e0!3m2!1sen!2sus!4v1780985979589!5m2!1sen!2sus" 
           width="100%" 
           height="100%" 
           style={{ border: 0, filter: "invert(92%) hue-rotate(180deg) grayscale(100%) brightness(0.85) contrast(1.1)" }} 
