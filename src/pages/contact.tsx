@@ -197,7 +197,7 @@ export default function Contact() {
                   <h3 className="font-display font-bold text-white text-base mb-1">Call Support</h3>
                   <div className="flex flex-col text-sm text-muted-foreground font-semibold">
                     <a href="tel:03457507053" className="hover:text-primary transition-colors py-0.5">0345-7507053</a>
-                    <a href="tel:03085556179" className="hover:text-primary transition-colors py-0.5">0308-5556179</a>
+                    <a href="tel:03085556779" className="hover:text-primary transition-colors py-0.5">0308-5556779</a>
                   </div>
                 </div>
               </motion.div>
