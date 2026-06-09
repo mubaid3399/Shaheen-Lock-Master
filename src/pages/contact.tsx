@@ -436,7 +436,7 @@ export default function Contact() {
               </p>
               <div className="flex gap-3 mt-4">
                 <a 
-                  href="https://www.google.com/maps/place/Shaheen+lock+master+%D8%B4%D8%A7%D9%87%D9%8A%D9%86+%D9%84%D8%A7%D9%83+%D9%85%D8%A7%D8%B3%D8%B7%D8%B1/@33.6926851,73.0139767,17z"
+                  href="https://www.google.com/maps/place/Shaheen+lock+master+%D8%B4%D8%A7%D9%87%D9%8A%D9%86+%D9%84%D8%A7%D9%83+%D9%85%D8%A7%D8%B3%D8%B7%D8%B1%E2%80%AD/@33.6954317,73.0104445,15.41z/data=!4m6!3m5!1s0x38dfbf26bf03ea81:0x830b825c940b4edc!8m2!3d33.6926851!4d73.0139767!16s%2Fg%2F11npx6x665?entry=ttu&g_ep=EgoyMDI2MDYwMy4xIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 text-[11px] font-bold bg-primary text-primary-foreground px-3 py-1.5 rounded-lg shadow-md hover:scale-105 active:scale-95 transition-transform"
