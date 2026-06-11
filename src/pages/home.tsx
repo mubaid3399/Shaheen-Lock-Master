@@ -16,6 +16,12 @@ import gallery3 from "@/assets/gallery-3.png";
 import gallery4 from "@/assets/gallery-4.png";
 import gallery5 from "@/assets/gallery-5.png";
 import gallery6 from "@/assets/gallery-6.png";
+import serviceSmartKey from "@/assets/service_smart_key.png";
+import serviceImmobilizer from "@/assets/service_immobilizer.png";
+import serviceUnlocking from "@/assets/service_unlocking.png";
+import serviceIgnition from "@/assets/service_ignition.png";
+import serviceDuplication from "@/assets/service_duplication.png";
+import serviceBattery from "@/assets/service_battery.png";
 
 // Brand Logos
 import logoToyota from "@/assets/brands/toyota.png";
@@ -145,12 +151,48 @@ export default function Home() {
   }, []);
 
   const services = [
-    { title: "Smart Key Programming", desc: "Advanced programming for modern push-start vehicles. Lost all keys? We can generate new ones.", icon: <Zap className="w-8 h-8 text-primary" /> },
-    { title: "Immobilizer Solutions", desc: "Expert diagnostics and repair for immobilizer systems. We resolve 'car won't start' security issues.", icon: <ShieldCheck className="w-8 h-8 text-primary" /> },
-    { title: "Emergency Unlocking", desc: "Locked out? 24/7 rapid response damage-free vehicle unlocking for all makes and models.", icon: <Clock className="w-8 h-8 text-primary" /> },
-    { title: "Ignition Repair", desc: "Key stuck or turning hard? We repair and replace ignition cylinders to factory standards.", icon: <Wrench className="w-8 h-8 text-primary" /> },
-    { title: "Key Duplication", desc: "Fast, precise key cutting for spares. Don't wait until you lose your only key.", icon: <Star className="w-8 h-8 text-primary" /> },
-    { title: "Remote Battery Service", desc: "Quick replacement and reprogramming of remote batteries and worn-out key shells.", icon: <Zap className="w-8 h-8 text-primary" /> },
+    { 
+      title: "Smart Key Programming", 
+      desc: "Advanced programming for modern push-start vehicles. Lost all keys? We can generate new ones.", 
+      icon: <Zap className="w-6 h-6 text-primary" />,
+      image: serviceSmartKey,
+      link: "/services/smart-key-programming"
+    },
+    { 
+      title: "Immobilizer Solutions", 
+      desc: "Expert diagnostics and repair for immobilizer systems. We resolve 'car won't start' security issues.", 
+      icon: <ShieldCheck className="w-6 h-6 text-primary" />,
+      image: serviceImmobilizer,
+      link: "/services/immobilizer-keys"
+    },
+    { 
+      title: "Emergency Unlocking", 
+      desc: "Locked out? 24/7 rapid response damage-free vehicle unlocking for all makes and models.", 
+      icon: <Clock className="w-6 h-6 text-primary" />,
+      image: serviceUnlocking,
+      link: "/services/vehicle-lockout-service"
+    },
+    { 
+      title: "Ignition Repair", 
+      desc: "Key stuck or turning hard? We repair and replace ignition cylinders to factory standards.", 
+      icon: <Wrench className="w-6 h-6 text-primary" />,
+      image: serviceIgnition,
+      link: "/services/ignition-repair"
+    },
+    { 
+      title: "Key Duplication", 
+      desc: "Fast, precise key cutting for spares. Don't wait until you lose your only key.", 
+      icon: <Star className="w-6 h-6 text-primary" />,
+      image: serviceDuplication,
+      link: "/services/car-key-duplication"
+    },
+    { 
+      title: "Remote Battery Service", 
+      desc: "Quick replacement and reprogramming of remote batteries and worn-out key shells.", 
+      icon: <Zap className="w-6 h-6 text-primary" />,
+      image: serviceBattery,
+      link: "/services/remote-battery-replacement"
+    },
   ];
 
   const faqs = [
@@ -262,16 +304,39 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
             {services.map((service, i) => (
-              <div key={i} className="group relative bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition-all duration-300 flex flex-col justify-between h-full hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/5">
-                <div>
-                  <div className="mb-6 bg-background rounded-xl w-16 h-16 flex items-center justify-center border border-border group-hover:scale-110 transition-transform duration-300">
-                    {service.icon}
-                  </div>
-                  <h3 className="text-xl font-display font-semibold mb-3">{service.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-6">{service.desc}</p>
-                </div>
-              </div>
-            ))}
+               <div key={i} className="group relative bg-card border border-border rounded-3xl overflow-hidden hover:border-primary/40 transition-all duration-300 flex flex-col justify-between h-full hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-primary/5">
+                 <div>
+                   {/* Card Image Wrapper */}
+                   <div className="relative aspect-[16/10] overflow-hidden w-full bg-secondary">
+                     <img 
+                       src={service.image} 
+                       alt={service.title} 
+                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                     />
+                     <div className="absolute inset-0 bg-gradient-to-t from-card via-card/10 to-transparent opacity-85" />
+                     
+                     {/* Floating Icon Badge */}
+                     <div className="absolute top-4 right-4 z-20 w-11 h-11 bg-card/85 backdrop-blur-md border border-white/10 rounded-xl flex items-center justify-center shadow-lg group-hover:border-primary/30 group-hover:scale-105 transition-all duration-300">
+                       {service.icon}
+                     </div>
+                   </div>
+
+                   {/* Card Content */}
+                   <div className="p-8">
+                     <h3 className="text-xl font-display font-bold mb-3 text-white group-hover:text-primary transition-colors duration-300">
+                       {service.title}
+                     </h3>
+                     <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                       {service.desc}
+                     </p>
+                     <Link href={service.link} className="inline-flex items-center gap-2 text-primary font-bold text-sm group/btn">
+                       <span>Learn More</span>
+                       <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                     </Link>
+                   </div>
+                 </div>
+               </div>
+             ))}
           </div>
         </div>
       </section>
