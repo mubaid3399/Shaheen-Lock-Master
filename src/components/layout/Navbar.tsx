@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, PhoneCall } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { OptimizedImage } from "@/components/OptimizedImage";
 import logoImg from "@/assets/logo & favicon.png";
 
 export function Navbar() {
@@ -55,7 +56,14 @@ export function Navbar() {
         <div className="container mx-auto px-4 md:px-6 h-20 flex items-center justify-between relative">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 z-50 group">
-            <img src={logoImg} alt="Logo" className="h-8 md:h-10 w-auto object-contain" />
+            <OptimizedImage
+              src={logoImg}
+              alt="Shaheen Lock Master"
+              priority
+              wrapperClassName="shrink-0"
+              showSkeleton={false}
+              className="h-8 md:h-10 w-auto object-contain"
+            />
             <div className="flex flex-col">
               <span className="font-display font-bold text-lg md:text-xl tracking-tight block leading-none text-white group-hover:text-primary transition-colors duration-300">
                 Shaheen
@@ -133,7 +141,13 @@ export function Navbar() {
               {/* Drawer header */}
               <div className="flex items-center justify-between px-6 h-20 border-b border-white/10">
                 <Link href="/" className="flex items-center gap-2.5" onClick={() => setMobileMenuOpen(false)}>
-                  <img src={logoImg} alt="Logo" className="h-7 w-auto object-contain" />
+                  <OptimizedImage
+                    src={logoImg}
+                    alt="Shaheen Lock Master"
+                    wrapperClassName="shrink-0"
+                    showSkeleton={false}
+                    className="h-7 w-auto object-contain"
+                  />
                   <div className="flex flex-col">
                     <span className="font-display font-bold text-base tracking-tight block leading-none text-white">
                       Shaheen

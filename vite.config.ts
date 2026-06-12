@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
+import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 
 const rawPort = process.env.PORT || "5173";
 const port = Number(rawPort) || 5173;
@@ -14,6 +15,15 @@ export default defineConfig({
     react(),
     tailwindcss(),
     runtimeErrorOverlay(),
+    ViteImageOptimizer({
+      png: { quality: 80 },
+      jpeg: { quality: 80 },
+      jpg: { quality: 80 },
+      webp: { quality: 82 },
+      avif: { quality: 70 },
+      cache: true,
+      cacheLocation: ".cache/image-optimizer",
+    }),
     ...(process.env.NODE_ENV !== "production" &&
     process.env.REPL_ID !== undefined
       ? [
@@ -39,6 +49,17 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist"),
     emptyOutDir: true,
+    target: "es2020",
+    cssMinify: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          "vendor-react": ["react", "react-dom", "wouter"],
+          "vendor-motion": ["framer-motion"],
+          "vendor-gsap": ["gsap"],
+        },
+      },
+    },
   },
   server: {
     port,

@@ -1,4 +1,5 @@
 import { SEO } from "@/components/SEO";
+import { OptimizedImage } from "@/components/OptimizedImage";
 import aboutImg from "@/assets/about-workshop.png";
 import { CheckCircle2, ShieldCheck, Target, Users, MapPin } from "lucide-react";
 import { Link } from "wouter";
@@ -27,7 +28,12 @@ export default function About() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
             <div>
-              <img src={aboutImg} alt="Our Workshop" className="rounded-2xl border border-border w-full h-[600px] object-cover shadow-2xl" />
+              <OptimizedImage
+                src={aboutImg}
+                alt="Our Workshop"
+                wrapperClassName="w-full h-[600px] rounded-2xl border border-border shadow-2xl"
+                className="w-full h-full object-cover rounded-2xl"
+              />
             </div>
             <div className="space-y-12">
               <div>

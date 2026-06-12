@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { SEO } from "@/components/SEO";
+import { OptimizedImage } from "@/components/OptimizedImage";
 import { Star, Quote, MessageSquare, MapPin, CheckCircle2, ShieldCheck, HelpCircle, Wrench, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
@@ -384,7 +385,13 @@ export default function Reviews() {
                 </div>
 
                 <div className="bg-card/20 border border-border/40 p-4 rounded-xl flex items-center gap-3">
-                  <img src={logoImg} alt="Shaheen Lock Master" className="w-9 h-9 object-contain shrink-0" />
+                  <OptimizedImage
+                    src={logoImg}
+                    alt="Shaheen Lock Master"
+                    wrapperClassName="shrink-0"
+                    showSkeleton={false}
+                    className="w-9 h-9 object-contain"
+                  />
                   <div>
                     <h4 className="text-xs font-bold text-white leading-tight">Shaheen Quality</h4>
                     <p className="text-[10px] text-muted-foreground">Dealer-Grade keys</p>
@@ -504,7 +511,12 @@ export default function Reviews() {
                               <div className="flex items-center justify-between">
                                 <div className="flex items-center gap-3">
                                   <div className="w-10 h-10 rounded-full overflow-hidden border border-primary/20 shrink-0">
-                                    <img src={review.img} alt={review.name} className="w-full h-full object-cover" />
+                                    <OptimizedImage
+                                      src={review.img}
+                                      alt={review.name}
+                                      wrapperClassName="w-full h-full"
+                                      className="w-full h-full object-cover"
+                                    />
                                   </div>
                                   <div>
                                     <h4 className="font-display font-bold text-white text-xs md:text-sm tracking-wide">{review.name}</h4>

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { SEO } from "@/components/SEO";
+import { OptimizedImage } from "@/components/OptimizedImage";
 import { Phone, MapPin, Clock, Send, ShieldAlert, Copy, Check, ExternalLink, MessageSquare, Sparkles } from "lucide-react";
+import { Spinner } from "@/components/ui/spinner";
 import { SiWhatsapp } from "react-icons/si";
 import { motion } from "framer-motion";
 import logoImg from "@/assets/logo & favicon.png";
@@ -8,6 +10,7 @@ import logoImg from "@/assets/logo & favicon.png";
 export default function Contact() {
   const [copiedText, setCopiedText] = useState<string>("");
   const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
   // Form Field States
   const [name, setName] = useState<string>("");
@@ -25,6 +28,7 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
     // Construct pre-filled lead message for WhatsApp
     const formattedMessage = `*Shaheen Lock Master - New Inquiry*\n\n` +
@@ -38,10 +42,10 @@ export default function Contact() {
     const encodedMessage = encodeURIComponent(formattedMessage);
     const whatsappUrl = `https://wa.me/923457507053?text=${encodedMessage}`;
 
-    // Open WhatsApp lead in a new window/tab
     window.open(whatsappUrl, "_blank");
 
     setFormSubmitted(true);
+    setIsSubmitting(false);
     setName("");
     setEmail("");
     setPhone("");
@@ -404,13 +408,23 @@ export default function Contact() {
                     </div>
                     
                     <motion.button 
-                      type="submit" 
-                      whileHover={{ scale: 1.02, y: -2 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="w-full flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-xl font-bold text-base transition-all shadow-[0_8px_30px_rgba(249,115,22,0.3)] hover:shadow-[0_8px_40px_rgba(249,115,22,0.45)] cursor-pointer"
+                      type="submit"
+                      disabled={isSubmitting}
+                      whileHover={{ scale: isSubmitting ? 1 : 1.02, y: isSubmitting ? 0 : -2 }}
+                      whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+                      className="w-full flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-xl font-bold text-base transition-all shadow-[0_8px_30px_rgba(249,115,22,0.3)] hover:shadow-[0_8px_40px_rgba(249,115,22,0.45)] cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
                     >
-                      <Send className="w-4 h-4" />
-                      <span>Send Message</span>
+                      {isSubmitting ? (
+                        <>
+                          <Spinner className="size-4" />
+                          <span>Opening WhatsApp...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Send className="w-4 h-4" />
+                          <span>Send Message</span>
+                        </>
+                      )}
                     </motion.button>
                   </form>
                 )}
@@ -427,7 +441,13 @@ export default function Contact() {
         {/* Floating Address Card on Desktop */}
         <div className="absolute top-8 left-8 z-20 bg-card/90 border border-white/10 p-5 rounded-2xl shadow-2xl max-w-sm backdrop-blur-md pointer-events-auto hidden md:block group-hover:border-primary/20 transition-all duration-300">
           <div className="flex gap-4">
-            <img src={logoImg} alt="Shaheen Lock Master" className="w-11 h-11 object-contain shrink-0 border border-primary/20 rounded-lg p-1 bg-background" />
+            <OptimizedImage
+              src={logoImg}
+              alt="Shaheen Lock Master"
+              wrapperClassName="shrink-0 border border-primary/20 rounded-lg p-1 bg-background"
+              showSkeleton={false}
+              className="w-11 h-11 object-contain"
+            />
             <div>
               <h3 className="font-display font-extrabold text-white text-base leading-tight">Shaheen Lock Master</h3>
               <p className="text-[10px] text-primary font-bold uppercase tracking-wider mt-0.5">Automotive Lock Specialist</p>

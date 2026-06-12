@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { Key, MapPin, Phone, Clock, Mail } from "lucide-react";
 import { SiWhatsapp, SiInstagram, SiTiktok, SiFacebook } from "react-icons/si";
+import { OptimizedImage } from "@/components/OptimizedImage";
 import logoImg from "@/assets/logo & favicon.png";
 
 export function Footer() {
@@ -13,7 +14,14 @@ export function Footer() {
           
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-3">
-              <img src={logoImg} alt="Logo" className="h-9 w-auto object-contain" />
+              <OptimizedImage
+                src={logoImg}
+                alt="Shaheen Lock Master"
+                priority
+                wrapperClassName="shrink-0"
+                showSkeleton={false}
+                className="h-9 w-auto object-contain"
+              />
               <div className="flex flex-col">
                 <span className="font-display font-bold text-xl tracking-tight block leading-none text-white">
                   Shaheen

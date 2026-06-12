@@ -1,4 +1,5 @@
 import { SEO } from "@/components/SEO";
+import { OptimizedImage } from "@/components/OptimizedImage";
 import { useParams } from "wouter";
 import { CheckCircle2, PhoneCall, ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
@@ -59,10 +60,11 @@ export default function ServiceDetail() {
         {/* Dynamic Background Image based on Service Category */}
         {bgImage && (
           <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-            <img 
-              src={bgImage} 
-              alt={title} 
-              className="w-full h-full object-cover opacity-20 select-none pointer-events-none" 
+            <OptimizedImage
+              src={bgImage}
+              alt={title}
+              wrapperClassName="absolute inset-0"
+              className="w-full h-full object-cover opacity-20 select-none pointer-events-none"
             />
             {/* Dark gradient mask for premium blending and text readability */}
             <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-transparent" />

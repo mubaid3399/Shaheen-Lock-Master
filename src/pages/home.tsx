@@ -7,9 +7,11 @@ gsap.registerPlugin(ScrollTrigger);
 import { ShieldCheck, Zap, Wrench, Clock, Star, MapPin, CheckCircle, ArrowRight, ChevronDown, PhoneCall } from "lucide-react";
 
 import { SEO } from "@/components/SEO";
+import { OptimizedImage } from "@/components/OptimizedImage";
+import { LazyBackground } from "@/components/LazyBackground";
 
-import heroBg from "@/assets/hero-bg.png";
 import expertiseBg from "@/assets/expertise-bg.png";
+import heroVideo from "@/assets/Locksmith_repairing_car_key_202606121638.mp4";
 import gallery1 from "@/assets/gallery-1.png";
 import gallery2 from "@/assets/gallery-2.png";
 import gallery3 from "@/assets/gallery-3.png";
@@ -121,9 +123,17 @@ const reviews = [
 export default function Home() {
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.5;
+    }
+  }, []);
   
   useEffect(() => {
     if (!headlineRef.current) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     
     const chars = headlineRef.current.innerText.split("");
     headlineRef.current.innerText = "";
@@ -213,10 +223,25 @@ export default function Home() {
       
       {/* HERO SECTION */}
       <section className="relative min-h-[100dvh] flex items-center pt-20 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-background/80 bg-gradient-to-t from-background via-background/60 to-transparent z-10" />
-          <img src={heroBg} alt="Automotive Key Programming" className="w-full h-full object-cover opacity-60" />
+        <div className="absolute inset-0 z-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800" />
+        
+        {/* Background Video Player */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+          <video 
+            ref={videoRef}
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            onPlay={(e) => { e.currentTarget.playbackRate = 0.5; }}
+            className="w-full h-full object-cover opacity-30 object-center"
+            style={{ objectFit: "cover", width: "100%", height: "100%" }}
+          >
+            <source src={heroVideo} type="video/mp4" />
+          </video>
         </div>
+        
+        <div className="absolute inset-0 z-10 bg-gradient-to-t from-background/90 via-background/70 to-transparent" />
         
         <div className="container mx-auto px-4 md:px-6 relative z-20">
           <div className="max-w-4xl">
@@ -278,15 +303,16 @@ export default function Home() {
       </section>
 
       {/* SERVICES PREVIEW */}
-      <section className="py-24 lg:py-32 relative overflow-hidden" ref={cardsRef}>
+      <section className="py-24 lg:py-32 relative overflow-hidden" style={{ clipPath: "inset(0)" }} ref={cardsRef}>
         {/* Stuck Background Image */}
-        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-          <div 
-            className="absolute inset-0 w-full h-full bg-cover bg-center bg-fixed opacity-45 select-none pointer-events-none" 
-            style={{ backgroundImage: `url(${expertiseBg})` }} 
-          />
-          {/* Gradient overlays to fade edges and ensure legibility */}
-          <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
+        <LazyBackground
+          src={expertiseBg}
+          alt=""
+          fixed
+          imageClassName="opacity-45"
+          overlayClassName="bg-gradient-to-b from-background via-transparent to-background"
+        />
+        <div className="absolute inset-0 z-0 pointer-events-none">
           <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background opacity-75" />
           <div className="absolute inset-0 bg-background/25" />
         </div>
@@ -308,10 +334,11 @@ export default function Home() {
                  <div>
                    {/* Card Image Wrapper */}
                    <div className="relative aspect-[16/10] overflow-hidden w-full bg-secondary">
-                     <img 
-                       src={service.image} 
-                       alt={service.title} 
-                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                     <OptimizedImage
+                       src={service.image}
+                       alt={service.title}
+                       wrapperClassName="absolute inset-0"
+                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                      />
                      <div className="absolute inset-0 bg-gradient-to-t from-card via-card/10 to-transparent opacity-85" />
                      
@@ -397,10 +424,11 @@ export default function Home() {
           >
             {[...brandLogos, ...brandLogos].map((brand, i) => (
               <div key={i} className="inline-flex items-center gap-3 shrink-0 px-4 md:px-6 transition-transform hover:scale-105 duration-300 group cursor-pointer">
-                <img 
-                  src={brand.img} 
-                  alt={`${brand.name} logo`} 
-                  className="h-7 md:h-9 w-auto object-contain grayscale brightness-200 contrast-75 opacity-50 group-hover:opacity-100 group-hover:grayscale-0 group-hover:brightness-100 group-hover:contrast-100 transition-all duration-300 select-none pointer-events-none" 
+                <OptimizedImage
+                  src={brand.img}
+                  alt={`${brand.name} logo`}
+                  wrapperClassName="shrink-0"
+                  className="h-7 md:h-9 w-auto object-contain grayscale brightness-200 contrast-75 opacity-50 group-hover:opacity-100 group-hover:grayscale-0 group-hover:brightness-100 group-hover:contrast-100 transition-all duration-300 select-none pointer-events-none"
                 />
                 <span className="text-sm md:text-base font-display font-semibold text-muted-foreground group-hover:text-foreground transition-colors duration-300 uppercase tracking-wider">
                   {brand.name}
@@ -451,7 +479,12 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {[gallery1, gallery2, gallery3, gallery4, gallery5, gallery6].map((img, i) => (
               <div key={i} className="aspect-square rounded-2xl overflow-hidden group">
-                <img src={img} alt={`Gallery ${i}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <OptimizedImage
+                  src={img}
+                  alt={`Gallery ${i + 1}`}
+                  wrapperClassName="w-full h-full"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
               </div>
             ))}
           </div>
@@ -491,7 +524,12 @@ export default function Home() {
                 {/* Author Info */}
                 <div className="flex items-center gap-4 border-t border-border/50 pt-6">
                   <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-primary/20 shrink-0">
-                    <img src={review.img} alt={review.name} className="w-full h-full object-cover animate-fade-in" />
+                    <OptimizedImage
+                      src={review.img}
+                      alt={review.name}
+                      wrapperClassName="w-full h-full"
+                      className="w-full h-full object-cover animate-fade-in"
+                    />
                   </div>
                   <div>
                     <h4 className="font-display font-bold text-foreground">{review.name}</h4>

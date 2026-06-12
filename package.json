@@ -7,7 +7,8 @@
     "dev": "vite --config vite.config.ts --host 0.0.0.0",
     "build": "vite build --config vite.config.ts",
     "serve": "vite preview --config vite.config.ts --host 0.0.0.0",
-    "typecheck": "tsc -p tsconfig.json --noEmit"
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "optimize:images": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -40,7 +41,6 @@
     "@radix-ui/react-tooltip": "^1.2.0",
     "@studio-freight/lenis": "^1.0.42",
     "@tailwindcss/typography": "^0.5.15",
-    "@tanstack/react-query": "^5.90.21",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
@@ -76,6 +76,8 @@
     "@types/react-dom": "^19.2.0",
     "@vitejs/plugin-react": "^5.0.4",
     "vite": "^7.3.2",
-    "typescript": "~5.9.3"
+    "sharp": "^0.34.4",
+    "typescript": "~5.9.3",
+    "vite-plugin-image-optimizer": "^2.0.3"
   }
 }

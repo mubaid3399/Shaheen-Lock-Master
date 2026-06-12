@@ -1,4 +1,5 @@
 import { SEO } from "@/components/SEO";
+import { OptimizedImage } from "@/components/OptimizedImage";
 
 import gallery1 from "@/assets/gallery-1.png";
 import gallery2 from "@/assets/gallery-2.png";
@@ -6,7 +7,6 @@ import gallery3 from "@/assets/gallery-3.png";
 import gallery4 from "@/assets/gallery-4.png";
 import gallery5 from "@/assets/gallery-5.png";
 import gallery6 from "@/assets/gallery-6.png";
-import gallery7 from "@/assets/gallery-7.png";
 import gallery8 from "@/assets/gallery-8.png";
 import heroBg from "@/assets/hero-bg.png";
 import workshop from "@/assets/about-workshop.png";
@@ -22,7 +22,6 @@ export default function Gallery() {
     { src: gallery5, alt: "Diagnostic tool", span: "col-span-1 row-span-1" },
     { src: workshop, alt: "Professional workshop", span: "md:col-span-2 md:row-span-2" },
     { src: gallery6, alt: "Ignition repair", span: "col-span-1 row-span-1" },
-    { src: gallery7, alt: "Luxury car keys", span: "col-span-1 row-span-1" },
     { src: gallery8, alt: "Soldering circuit board", span: "col-span-1 row-span-1" },
   ];
 
@@ -45,9 +44,10 @@ export default function Gallery() {
           <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[200px] md:auto-rows-[250px] gap-4 md:gap-6">
             {images.map((img, i) => (
               <div key={i} className={`group relative overflow-hidden rounded-2xl bg-card border border-border ${img.span}`}>
-                <img 
-                  src={img.src} 
-                  alt={img.alt} 
+                <OptimizedImage
+                  src={img.src}
+                  alt={img.alt}
+                  wrapperClassName="w-full h-full"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
