@@ -135,19 +135,38 @@ export default function Home() {
     if (!headlineRef.current) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     
-    const chars = headlineRef.current.innerText.split("");
+    const text = headlineRef.current.innerText;
     headlineRef.current.innerText = "";
     
-    chars.forEach((char) => {
-      const span = document.createElement("span");
-      span.innerText = char === " " ? "\u00A0" : char;
-      span.style.opacity = "0";
-      span.style.filter = "blur(10px)";
-      span.style.display = "inline-block";
-      headlineRef.current?.appendChild(span);
+    const words = text.split(" ");
+    words.forEach((word, wordIndex) => {
+      // Create a span to contain the word and prevent line breaks in the middle of it
+      const wordSpan = document.createElement("span");
+      wordSpan.className = "inline-block whitespace-nowrap";
+      
+      // Split word into characters
+      const chars = word.split("");
+      chars.forEach((char) => {
+        const charSpan = document.createElement("span");
+        charSpan.innerText = char;
+        charSpan.className = "char-span";
+        charSpan.style.opacity = "0";
+        charSpan.style.filter = "blur(10px)";
+        charSpan.style.display = "inline-block";
+        wordSpan.appendChild(charSpan);
+      });
+      
+      headlineRef.current?.appendChild(wordSpan);
+      
+      // Append space between words
+      if (wordIndex < words.length - 1) {
+        const spaceNode = document.createTextNode(" ");
+        headlineRef.current?.appendChild(spaceNode);
+      }
     });
 
-    gsap.to(headlineRef.current.children, {
+    const targets = headlineRef.current.querySelectorAll(".char-span");
+    gsap.to(targets, {
       opacity: 1,
       filter: "blur(0px)",
       stagger: 0.02,
