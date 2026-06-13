@@ -28,7 +28,7 @@ export default function Gallery() {
   return (
     <>
       <SEO 
-        title="Gallery | Shaheen Lock Master"
+        title="Gallery | Shaheen Locksmith"
         description="View our gallery of professional automotive locksmith equipment, smart keys, and repair work in Islamabad."
       />
       
@@ -52,7 +52,7 @@ export default function Gallery() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                   <span className="font-display font-bold text-white text-lg">{img.alt}</span>
-                  <span className="text-primary text-sm font-medium tracking-widest uppercase mt-1">Shaheen Lock Master</span>
+                  <span className="text-primary text-sm font-medium tracking-widest uppercase mt-1">Shaheen Locksmith</span>
                 </div>
               </div>
             ))}
@@ -64,7 +64,7 @@ export default function Gallery() {
          <div className="container mx-auto px-4 md:px-6 max-w-2xl">
             <h2 className="text-3xl font-display font-bold mb-6">Quality You Can See</h2>
             <p className="text-muted-foreground mb-8">We use only premium tools and parts to ensure every job meets the highest standards.</p>
-            <a href="tel:03457507053" className="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-transform">
+            <a href="tel:03085556779" className="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-transform">
               Book a Service
             </a>
          </div>

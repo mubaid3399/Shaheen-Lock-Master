@@ -101,21 +101,21 @@ const reviews = [
     name: "Faisal Rehman",
     role: "BMW 5-Series Owner",
     img: customer1,
-    text: "Lost my only smart key for my BMW and was panicking. Shaheen Lock Master came to my location in Bahria Town, diagnosed the vehicle, and programmed a brand new key in less than an hour. Half the price of what the dealership quoted. Extremely professional!",
+    text: "Lost my only smart key for my BMW and was panicking. Shaheen Locksmith came to my location in Bahria Town, diagnosed the vehicle, and programmed a brand new key in less than an hour. Half the price of what the dealership quoted. Extremely professional!",
     stars: 5
   },
   {
     name: "Ayesha Malik",
     role: "Honda Civic Owner",
     img: customer2,
-    text: "Locked my keys inside the car late at night. Shaheen Lock Master arrived within 25 minutes of calling. They opened the car in just a few minutes without causing a single scratch. Highly recommend their emergency 24/7 service!",
+    text: "Locked my keys inside the car late at night. Shaheen Locksmith arrived within 25 minutes of calling. They opened the car in just a few minutes without causing a single scratch. Highly recommend their emergency 24/7 service!",
     stars: 5
   },
   {
     name: "Kamran Khan",
     role: "Toyota Fortuner Owner",
     img: customer3,
-    text: "Wanted a spare key fob for my Fortuner. Shaheen Lock Master cut the blade and programmed the remote perfectly. Everything works flawlessly, buttons respond fast. Friendly staff and fast turnaround.",
+    text: "Wanted a spare key fob for my Fortuner. Shaheen Locksmith cut the blade and programmed the remote perfectly. Everything works flawlessly, buttons respond fast. Friendly staff and fast turnaround.",
     stars: 5
   }
 ];
@@ -217,7 +217,7 @@ export default function Home() {
   return (
     <>
       <SEO 
-        title="Shaheen Lock Master | Auto Key Programming Islamabad"
+        title="Shaheen Locksmith | Auto Key Programming Islamabad"
         description="Professional auto key programming, smart keys, and emergency locksmith services in Islamabad and Rawalpindi. All vehicle brands supported."
       />
       
@@ -270,7 +270,7 @@ export default function Home() {
               className="flex flex-col sm:flex-row gap-4"
             >
               <a 
-                href="tel:03457507053"
+                href="tel:03085556779"
                 className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-bold text-lg hover:bg-primary/90 transition-all hover:scale-105"
               >
                 Call Now
@@ -601,9 +601,9 @@ export default function Home() {
           <h2 className="text-4xl md:text-6xl font-display font-bold mb-6">Need Immediate Assistance?</h2>
           <p className="text-xl text-muted-foreground mb-10">Our emergency team is ready to help you get back on the road safely and quickly.</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="tel:03457507053" className="flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-transform shadow-[0_0_30px_rgba(249,115,22,0.3)]">
+            <a href="tel:03085556779" className="flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-transform shadow-[0_0_30px_rgba(249,115,22,0.3)]">
               <PhoneCall className="w-5 h-5" />
-              Call 0345-7507053
+              Call 0308-5556779
             </a>
           </div>
         </div>

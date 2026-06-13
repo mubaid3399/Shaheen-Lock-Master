@@ -31,7 +31,7 @@ export default function Contact() {
     setIsSubmitting(true);
     
     // Construct pre-filled lead message for WhatsApp
-    const formattedMessage = `*Shaheen Lock Master - New Inquiry*\n\n` +
+    const formattedMessage = `*Shaheen Locksmith - New Inquiry*\n\n` +
       `*Name:* ${name}\n` +
       `*Email:* ${email}\n` +
       `*Phone:* ${phone}\n` +
@@ -82,8 +82,8 @@ export default function Contact() {
   return (
     <>
       <SEO 
-        title="Contact Us | Shaheen Lock Master"
-        description="Contact Islamabad's premier auto locksmith. 24/7 emergency lockouts and smart key programming. Call 0345-7507053 for immediate dispatch."
+        title="Contact Us | Shaheen Locksmith"
+        description="Contact Islamabad's premier auto locksmith. 24/7 emergency lockouts and smart key programming. Call 0308-5556779 for immediate dispatch."
       />
 
       {/* HIDDEN SVG GRADIENTS FOR PREMIUM DUAL-TONE ICONS */}
@@ -160,7 +160,7 @@ export default function Contact() {
               </div>
             </div>
             <a 
-              href="tel:03457507053" 
+              href="tel:03085556779" 
               className="w-full md:w-auto text-center bg-red-500 hover:bg-red-600 active:scale-95 text-white px-8 py-3.5 rounded-xl font-bold transition-all shadow-[0_4px_20px_rgba(239,68,68,0.3)] whitespace-nowrap"
             >
               Call Emergency Line
@@ -190,7 +190,7 @@ export default function Contact() {
                     <Phone className="w-6 h-6" style={{ stroke: "url(#phoneGrad)" }} />
                   </div>
                   <button 
-                    onClick={() => handleCopy("0345-7507053", "phone")}
+                    onClick={() => handleCopy("0308-5556779", "phone")}
                     className="p-2 rounded-lg bg-secondary/80 border border-border text-muted-foreground hover:text-white transition-colors cursor-pointer"
                     title="Copy to Clipboard"
                   >
@@ -200,8 +200,8 @@ export default function Contact() {
                 <div className="mt-6 relative z-10">
                   <h3 className="font-display font-bold text-white text-base mb-1">Call Support</h3>
                   <div className="flex flex-col text-sm text-muted-foreground font-semibold">
-                    <a href="tel:03457507053" className="hover:text-primary transition-colors py-0.5">0345-7507053</a>
-                    <a href="tel:03085556779" className="hover:text-primary transition-colors py-0.5">0308-5556779</a>
+                    <a href="tel:03085556779" className="hover:text-primary transition-colors py-0.5">0308-5556779 (Primary)</a>
+                    <a href="tel:03457507053" className="hover:text-primary transition-colors py-0.5">0345-7507053 (Secondary)</a>
                   </div>
                 </div>
               </motion.div>
@@ -317,7 +317,7 @@ export default function Contact() {
                     <Check className="w-8 h-8 mx-auto bg-green-500/20 rounded-full p-1.5 border border-green-500/30" />
                     <h3 className="font-display font-bold text-white text-lg">Inquiry Sent Successfully!</h3>
                     <p className="text-xs text-green-400/80 leading-relaxed">
-                      Thank you for contacting Shaheen Lock Master. One of our lock specialists will review your vehicle details and call/message you shortly.
+                      Thank you for contacting Shaheen Locksmith. One of our lock specialists will review your vehicle details and call/message you shortly.
                     </p>
                   </motion.div>
                 ) : (
@@ -443,13 +443,13 @@ export default function Contact() {
           <div className="flex gap-4">
             <OptimizedImage
               src={logoImg}
-              alt="Shaheen Lock Master"
+              alt="Shaheen Locksmith"
               wrapperClassName="shrink-0 border border-primary/20 rounded-lg p-1 bg-background"
               showSkeleton={false}
               className="w-11 h-11 object-contain"
             />
             <div>
-              <h3 className="font-display font-extrabold text-white text-base leading-tight">Shaheen Lock Master</h3>
+              <h3 className="font-display font-extrabold text-white text-base leading-tight">Shaheen Locksmith</h3>
               <p className="text-[10px] text-primary font-bold uppercase tracking-wider mt-0.5">Automotive Lock Specialist</p>
               <p className="text-muted-foreground text-xs mt-3 leading-relaxed">
                 Shop #1-2 Auto Market F-10/4 Markaz, Islamabad, Pakistan
@@ -465,7 +465,7 @@ export default function Contact() {
                   <span>Open Maps</span>
                 </a>
                 <a 
-                  href="tel:03457507053"
+                  href="tel:03085556779"
                   className="inline-flex items-center gap-1 text-[11px] font-bold bg-secondary border border-border text-white px-3 py-1.5 rounded-lg hover:bg-secondary/80 active:scale-95 transition-transform"
                 >
                   <Phone className="w-3.5 h-3.5 text-primary" />
@@ -485,7 +485,7 @@ export default function Contact() {
           allowFullScreen 
           loading="lazy" 
           referrerPolicy="no-referrer-when-downgrade"
-          title="Shaheen Lock Master Location"
+          title="Shaheen Locksmith Location"
         ></iframe>
       </section>
     </>

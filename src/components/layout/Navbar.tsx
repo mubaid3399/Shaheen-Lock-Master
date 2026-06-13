@@ -58,7 +58,7 @@ export function Navbar() {
           <Link href="/" className="flex items-center gap-3 z-50 group">
             <OptimizedImage
               src={logoImg}
-              alt="Shaheen Lock Master"
+              alt="Shaheen Locksmith"
               priority
               wrapperClassName="shrink-0"
               showSkeleton={false}
@@ -69,7 +69,7 @@ export function Navbar() {
                 Shaheen
               </span>
               <span className="font-display font-medium text-[10px] md:text-xs text-accent tracking-widest uppercase block mt-0.5">
-                Lock Master
+                Locksmith
               </span>
             </div>
           </Link>
@@ -97,11 +97,11 @@ export function Navbar() {
           {/* CTA Button */}
           <div className="hidden lg:flex items-center z-50">
             <a
-              href="tel:03457507053"
+              href="tel:03085556779"
               className="flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-5 py-2.5 rounded-full text-sm font-semibold transition-all hover:shadow-[0_0_20px_rgba(249,115,22,0.3)]"
             >
               <PhoneCall className="w-4 h-4" />
-              <span>0345-7507053</span>
+              <span>0308-5556779</span>
             </a>
           </div>
 
@@ -143,7 +143,7 @@ export function Navbar() {
                 <Link href="/" className="flex items-center gap-2.5" onClick={() => setMobileMenuOpen(false)}>
                   <OptimizedImage
                     src={logoImg}
-                    alt="Shaheen Lock Master"
+                    alt="Shaheen Locksmith"
                     wrapperClassName="shrink-0"
                     showSkeleton={false}
                     className="h-7 w-auto object-contain"
@@ -153,7 +153,7 @@ export function Navbar() {
                       Shaheen
                     </span>
                     <span className="font-display font-medium text-[9px] text-accent tracking-widest uppercase block mt-0.5">
-                      Lock Master
+                      Locksmith
                     </span>
                   </div>
                 </Link>
@@ -193,11 +193,11 @@ export function Navbar() {
               {/* CTA at bottom */}
               <div className="px-4 pb-8">
                 <a
-                  href="tel:03457507053"
+                  href="tel:03085556779"
                   className="flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-4 rounded-xl font-bold text-base hover:bg-primary/90 transition-all shadow-[0_0_20px_rgba(249,115,22,0.3)] w-full"
                 >
                   <PhoneCall className="w-5 h-5" />
-                  Call 0345-7507053
+                  Call 0308-5556779
                 </a>
               </div>
             </motion.div>

@@ -16,7 +16,7 @@ export function Footer() {
             <Link href="/" className="flex items-center gap-3">
               <OptimizedImage
                 src={logoImg}
-                alt="Shaheen Lock Master"
+                alt="Shaheen Locksmith"
                 priority
                 wrapperClassName="shrink-0"
                 showSkeleton={false}
@@ -27,7 +27,7 @@ export function Footer() {
                   Shaheen
                 </span>
                 <span className="font-display font-medium text-xs text-accent tracking-widest uppercase block mt-0.5">
-                  Lock Master
+                  Locksmith
                 </span>
               </div>
             </Link>
@@ -83,8 +83,8 @@ export function Footer() {
               <li className="flex gap-3">
                 <Phone className="w-5 h-5 text-primary shrink-0" />
                 <div className="flex flex-col gap-1">
-                  <a href="tel:03457507053" className="hover:text-white transition-colors">0345-7507053</a>
-                  <a href="tel:03085556779" className="hover:text-white transition-colors">0308-5556779</a>
+                  <a href="tel:03085556779" className="hover:text-white transition-colors">0308-5556779 (Call)</a>
+                  <a href="tel:03457507053" className="hover:text-white transition-colors">0345-7507053 (WhatsApp)</a>
                 </div>
               </li>
               <li className="flex gap-3">
@@ -101,7 +101,7 @@ export function Footer() {
         </div>
 
         <div className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
-          <p>&copy; {currentYear} Shaheen Lock Master. All rights reserved.</p>
+          <p>&copy; {currentYear} Shaheen Locksmith. All rights reserved.</p>
           <div className="flex gap-4">
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>

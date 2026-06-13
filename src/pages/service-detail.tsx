@@ -52,7 +52,7 @@ export default function ServiceDetail() {
   return (
     <>
       <SEO 
-        title={`${title} | Shaheen Lock Master`}
+        title={`${title} | Shaheen Locksmith`}
         description={`Professional ${title.toLowerCase()} services in Islamabad and Rawalpindi. Rapid response, dealer-level equipment, expert technicians.`}
       />
       
@@ -146,9 +146,9 @@ export default function ServiceDetail() {
                 <h3 className="text-2xl font-display font-bold mb-4">Need This Service?</h3>
                 <p className="text-muted-foreground mb-8">Contact us now for an immediate quote or to dispatch a technician to your location.</p>
                 <div className="space-y-4">
-                  <a href="tel:03457507053" className="flex items-center justify-center gap-3 w-full bg-primary text-primary-foreground px-6 py-4 rounded-xl font-bold text-lg hover:scale-[1.02] transition-transform">
+                  <a href="tel:03085556779" className="flex items-center justify-center gap-3 w-full bg-primary text-primary-foreground px-6 py-4 rounded-xl font-bold text-lg hover:scale-[1.02] transition-transform">
                     <PhoneCall className="w-5 h-5" />
-                    Call 0345-7507053
+                    Call 0308-5556779
                   </a>
                   <a href="https://wa.me/923457507053" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 w-full bg-[#25D366] text-white px-6 py-4 rounded-xl font-bold text-lg hover:scale-[1.02] transition-transform">
                     <SiWhatsapp className="w-5 h-5" />
