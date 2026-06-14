@@ -226,7 +226,7 @@ export default function Reviews() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Shaheen Lock Master",
-    "image": "https://shaheenlockmaster.com/logo.png",
+    "image": "https://www.shaheenlocksmith.com/android-chrome-512x512.png",
     "telephone": "0345-7507053",
     "priceRange": "$$",
     "address": {
