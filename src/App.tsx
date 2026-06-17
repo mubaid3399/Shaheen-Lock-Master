@@ -12,6 +12,8 @@ const ServiceDetail = lazy(() => import("@/pages/service-detail"));
 const Gallery = lazy(() => import("@/pages/gallery"));
 const Reviews = lazy(() => import("@/pages/reviews"));
 const Contact = lazy(() => import("@/pages/contact"));
+const Privacy = lazy(() => import("@/pages/privacy"));
+const Terms = lazy(() => import("@/pages/terms"));
 const NotFound = lazy(() => import("@/pages/not-found"));
 
 function ScrollToTop() {
@@ -40,6 +42,8 @@ function Router() {
           <Route path="/gallery" component={Gallery} />
           <Route path="/reviews" component={Reviews} />
           <Route path="/contact" component={Contact} />
+          <Route path="/privacy" component={Privacy} />
+          <Route path="/terms" component={Terms} />
           <Route component={NotFound} />
         </Switch>
       </Suspense>
