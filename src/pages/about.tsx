@@ -1,7 +1,7 @@
 import { SEO } from "@/components/SEO";
 import { JsonLd, localBusinessSchema, breadcrumbSchema } from "@/components/JsonLd";
 import { OptimizedImage } from "@/components/OptimizedImage";
-import aboutImg from "@/assets/about-workshop.png";
+import aboutImg from "@/assets/about-workshop.webp";
 import { CheckCircle2, ShieldCheck, Target, Users, MapPin } from "lucide-react";
 import { Link } from "wouter";
 

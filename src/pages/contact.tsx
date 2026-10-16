@@ -6,7 +6,7 @@ import { Phone, MapPin, Clock, Send, ShieldAlert, Copy, Check, ExternalLink, Mes
 import { Spinner } from "@/components/ui/spinner";
 import { SiWhatsapp } from "react-icons/si";
 import { motion } from "framer-motion";
-import logoImg from "@/assets/logo & favicon.png";
+import logoImg from "@/assets/logo & favicon.webp";
 
 export default function Contact() {
   const [copiedText, setCopiedText] = useState<string>("");

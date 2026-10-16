@@ -2,15 +2,15 @@ import { SEO } from "@/components/SEO";
 import { JsonLd, localBusinessSchema, breadcrumbSchema } from "@/components/JsonLd";
 import { OptimizedImage } from "@/components/OptimizedImage";
 
-import gallery1 from "@/assets/gallery-1.png";
-import gallery2 from "@/assets/gallery-2.png";
-import gallery3 from "@/assets/gallery-3.png";
-import gallery4 from "@/assets/gallery-4.png";
-import gallery5 from "@/assets/gallery-5.png";
-import gallery6 from "@/assets/gallery-6.png";
-import gallery8 from "@/assets/gallery-8.png";
-import heroBg from "@/assets/hero-bg.png";
-import workshop from "@/assets/about-workshop.png";
+import gallery1 from "@/assets/gallery-1.webp";
+import gallery2 from "@/assets/gallery-2.webp";
+import gallery3 from "@/assets/gallery-3.webp";
+import gallery4 from "@/assets/gallery-4.webp";
+import gallery5 from "@/assets/gallery-5.webp";
+import gallery6 from "@/assets/gallery-6.webp";
+import gallery8 from "@/assets/gallery-8.webp";
+import heroBg from "@/assets/hero-bg.webp";
+import workshop from "@/assets/about-workshop.webp";
 
 export default function Gallery() {
   // Use available images to create a rich masonry-like grid

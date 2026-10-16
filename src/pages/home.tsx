@@ -11,42 +11,42 @@ import { JsonLd, localBusinessSchema, homeFaqSchema } from "@/components/JsonLd"
 import { OptimizedImage } from "@/components/OptimizedImage";
 import { LazyBackground } from "@/components/LazyBackground";
 
-import expertiseBg from "@/assets/expertise-bg.png";
+import expertiseBg from "@/assets/expertise-bg.webp";
 import heroVideo from "@/assets/Locksmith_repairing_car_key_202606121638.mp4";
-import gallery1 from "@/assets/gallery-1.png";
-import gallery2 from "@/assets/gallery-2.png";
-import gallery3 from "@/assets/gallery-3.png";
-import gallery4 from "@/assets/gallery-4.png";
-import gallery5 from "@/assets/gallery-5.png";
-import gallery6 from "@/assets/gallery-6.png";
-import serviceSmartKey from "@/assets/service_smart_key.png";
-import serviceImmobilizer from "@/assets/service_immobilizer.png";
-import serviceUnlocking from "@/assets/service_unlocking.png";
-import serviceIgnition from "@/assets/service_ignition.png";
-import serviceDuplication from "@/assets/service_duplication.png";
-import serviceBattery from "@/assets/service_battery.png";
+import gallery1 from "@/assets/gallery-1.webp";
+import gallery2 from "@/assets/gallery-2.webp";
+import gallery3 from "@/assets/gallery-3.webp";
+import gallery4 from "@/assets/gallery-4.webp";
+import gallery5 from "@/assets/gallery-5.webp";
+import gallery6 from "@/assets/gallery-6.webp";
+import serviceSmartKey from "@/assets/service_smart_key.webp";
+import serviceImmobilizer from "@/assets/service_immobilizer.webp";
+import serviceUnlocking from "@/assets/service_unlocking.webp";
+import serviceIgnition from "@/assets/service_ignition.webp";
+import serviceDuplication from "@/assets/service_duplication.webp";
+import serviceBattery from "@/assets/service_battery.webp";
 
 // Brand Logos
-import logoToyota from "@/assets/brands/toyota.png";
-import logoHonda from "@/assets/brands/honda.png";
-import logoSuzuki from "@/assets/brands/suzuki.png";
-import logoKia from "@/assets/brands/kia.png";
-import logoHyundai from "@/assets/brands/hyundai.png";
-import logoBmw from "@/assets/brands/bmw.png";
-import logoAudi from "@/assets/brands/audi.png";
-import logoMercedes from "@/assets/brands/mercedes.png";
-import logoNissan from "@/assets/brands/nissan.png";
-import logoLexus from "@/assets/brands/lexus.png";
-import logoMitsubishi from "@/assets/brands/mitsubishi.png";
-import logoMg from "@/assets/brands/mg.png";
-import logoChangan from "@/assets/brands/changan.png";
-import logoProton from "@/assets/brands/proton.png";
-import logoHaval from "@/assets/brands/haval.png";
+import logoToyota from "@/assets/brands/toyota.webp";
+import logoHonda from "@/assets/brands/honda.webp";
+import logoSuzuki from "@/assets/brands/suzuki.webp";
+import logoKia from "@/assets/brands/kia.webp";
+import logoHyundai from "@/assets/brands/hyundai.webp";
+import logoBmw from "@/assets/brands/bmw.webp";
+import logoAudi from "@/assets/brands/audi.webp";
+import logoMercedes from "@/assets/brands/mercedes.webp";
+import logoNissan from "@/assets/brands/nissan.webp";
+import logoLexus from "@/assets/brands/lexus.webp";
+import logoMitsubishi from "@/assets/brands/mitsubishi.webp";
+import logoMg from "@/assets/brands/mg.webp";
+import logoChangan from "@/assets/brands/changan.webp";
+import logoProton from "@/assets/brands/proton.webp";
+import logoHaval from "@/assets/brands/haval.webp";
 
 // Customer Avatars
-import customer1 from "@/assets/customer-1.png";
-import customer2 from "@/assets/customer-2.png";
-import customer3 from "@/assets/customer-3.png";
+import customer1 from "@/assets/customer-1.webp";
+import customer2 from "@/assets/customer-2.webp";
+import customer3 from "@/assets/customer-3.webp";
 
 
 function Counter({ end, suffix = "" }: { end: number, suffix?: string }) {

@@ -14,11 +14,11 @@ import {
 } from "@/components/ui/accordion";
 
 // Gallery Category Images for Background
-import gallery2 from "@/assets/gallery-2.png"; // Key Creation / Duplication
-import gallery3 from "@/assets/gallery-3.png"; // Key Programming
-import gallery4 from "@/assets/gallery-4.png"; // Locks & Ignition
-import gallery5 from "@/assets/gallery-5.png"; // Security & Electronics
-import gallery8 from "@/assets/gallery-8.png"; // Emergency & Maintenance
+import gallery2 from "@/assets/gallery-2.webp"; // Key Creation / Duplication
+import gallery3 from "@/assets/gallery-3.webp"; // Key Programming
+import gallery4 from "@/assets/gallery-4.webp"; // Locks & Ignition
+import gallery5 from "@/assets/gallery-5.webp"; // Security & Electronics
+import gallery8 from "@/assets/gallery-8.webp"; // Emergency & Maintenance
 
 const bgImages: Record<string, string> = {
   // Key Programming

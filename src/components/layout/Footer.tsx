@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { Key, MapPin, Phone, Clock, Mail } from "lucide-react";
 import { SiWhatsapp, SiInstagram, SiTiktok, SiFacebook } from "react-icons/si";
 import { OptimizedImage } from "@/components/OptimizedImage";
-import logoImg from "@/assets/logo & favicon.png";
+import logoImg from "@/assets/logo & favicon.webp";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();

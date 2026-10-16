@@ -3,7 +3,7 @@ import { Link, useLocation } from "wouter";
 import { Menu, X, PhoneCall } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { OptimizedImage } from "@/components/OptimizedImage";
-import logoImg from "@/assets/logo & favicon.png";
+import logoImg from "@/assets/logo & favicon.webp";
 
 export function Navbar() {
   const [location] = useLocation();

@@ -4,15 +4,15 @@ import { OptimizedImage } from "@/components/OptimizedImage";
 import { Star, Quote, MessageSquare, MapPin, CheckCircle2, ShieldCheck, HelpCircle, Wrench, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
-import logoImg from "@/assets/logo & favicon.png";
+import logoImg from "@/assets/logo & favicon.webp";
 
 // Customer Avatars
-import customer1 from "@/assets/customer-1.png";
-import customer2 from "@/assets/customer-2.png";
-import customer3 from "@/assets/customer-3.png";
-import customer4 from "@/assets/customer-4.png";
-import customer5 from "@/assets/customer-5.png";
-import customer6 from "@/assets/customer-6.png";
+import customer1 from "@/assets/customer-1.webp";
+import customer2 from "@/assets/customer-2.webp";
+import customer3 from "@/assets/customer-3.webp";
+import customer4 from "@/assets/customer-4.webp";
+import customer5 from "@/assets/customer-5.webp";
+import customer6 from "@/assets/customer-6.webp";
 
 interface Review {
   id: number;
