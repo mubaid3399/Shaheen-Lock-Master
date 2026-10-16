@@ -7,6 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 import { ShieldCheck, Zap, Wrench, Clock, Star, MapPin, CheckCircle, ArrowRight, ChevronDown, PhoneCall } from "lucide-react";
 
 import { SEO } from "@/components/SEO";
+import { JsonLd, localBusinessSchema, homeFaqSchema } from "@/components/JsonLd";
 import { OptimizedImage } from "@/components/OptimizedImage";
 import { LazyBackground } from "@/components/LazyBackground";
 
@@ -236,9 +237,12 @@ export default function Home() {
   return (
     <>
       <SEO 
-        title="Shaheen Locksmith | Auto Key Programming Islamabad"
-        description="Professional auto key programming, smart keys, and emergency locksmith services in Islamabad and Rawalpindi. All vehicle brands supported."
+        title="Shaheen Locksmith | Auto Key Programming Islamabad & Rawalpindi"
+        description="Professional auto key programming, smart keys, emergency lockouts, and immobilizer repair in Islamabad & Rawalpindi. All vehicle brands. Call 0308-5556779."
+        keywords="auto locksmith Islamabad, smart key programming Rawalpindi, car key duplication, emergency lockout service Pakistan, immobilizer repair, lost car key Islamabad, key fob programming"
+        ogImage="https://www.shaheenlocksmith.com/opengraph.jpg"
       />
+      <JsonLd schemas={[localBusinessSchema, homeFaqSchema]} />
       
       {/* HERO SECTION */}
       <section className="relative min-h-[100dvh] flex items-center pt-20 overflow-hidden">

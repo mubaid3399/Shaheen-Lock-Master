@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { SEO } from "@/components/SEO";
+import { JsonLd, localBusinessSchema, breadcrumbSchema } from "@/components/JsonLd";
 import { OptimizedImage } from "@/components/OptimizedImage";
 import { Phone, MapPin, Clock, Send, ShieldAlert, Copy, Check, ExternalLink, MessageSquare, Sparkles } from "lucide-react";
 import { Spinner } from "@/components/ui/spinner";
@@ -82,9 +83,11 @@ export default function Contact() {
   return (
     <>
       <SEO 
-        title="Contact Us | Shaheen Locksmith"
-        description="Contact Islamabad's premier auto locksmith. 24/7 emergency lockouts and smart key programming. Call 0308-5556779 for immediate dispatch."
+        title="Contact Shaheen Locksmith | Auto Locksmith Islamabad"
+        description="Contact Islamabad's trusted auto locksmith. 24/7 emergency lockouts, smart key programming & immobilizer repair. Call 0308-5556779 for immediate dispatch in Islamabad & Rawalpindi."
+        keywords="contact locksmith Islamabad, emergency locksmith Rawalpindi, auto locksmith phone number, car key help Pakistan"
       />
+      <JsonLd schemas={[localBusinessSchema, breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Contact", url: "/contact" }])]} />
 
       {/* HIDDEN SVG GRADIENTS FOR PREMIUM DUAL-TONE ICONS */}
       <svg className="absolute w-0 h-0" width="0" height="0">

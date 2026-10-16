@@ -8,6 +8,7 @@ export default function Terms() {
       <SEO 
         title="Terms of Service | Shaheen Locksmith"
         description="Read the Terms of Service of Shaheen Locksmith to understand our rules, guidelines, and terms regarding locksmith work and vehicle verification."
+        keywords="Shaheen Locksmith terms of service, locksmith service agreement Pakistan, automotive locksmith terms"
       />
       
       <section className="pt-32 pb-20 border-b border-border bg-card/30 relative overflow-hidden">

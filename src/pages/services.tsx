@@ -1,4 +1,5 @@
 import { SEO } from "@/components/SEO";
+import { JsonLd, localBusinessSchema, breadcrumbSchema } from "@/components/JsonLd";
 import { Link } from "wouter";
 import { ArrowRight, KeyRound, ShieldCheck, Wrench, Battery, Unlock, Zap, Car, Settings } from "lucide-react";
 
@@ -59,9 +60,11 @@ export default function Services() {
   return (
     <>
       <SEO 
-        title="Our Services | Auto Key Programming & Repair"
-        description="Comprehensive automotive locksmith services including smart key programming, immobilizer solutions, and door lock repair."
+        title="Automotive Locksmith Services | Shaheen Locksmith Islamabad"
+        description="Comprehensive automotive locksmith services in Islamabad & Rawalpindi — smart key programming, immobilizer repair, car lockouts, ignition repair, and key duplication. All brands supported."
+        keywords="automotive locksmith services Islamabad, smart key programming, car key duplication, ignition repair Islamabad, immobilizer repair, door lock replacement"
       />
+      <JsonLd schemas={[localBusinessSchema, breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Services", url: "/services" }])]} />
       
       <section className="pt-32 pb-24 border-b border-border bg-card/30 relative overflow-hidden">
          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-background to-background pointer-events-none" />

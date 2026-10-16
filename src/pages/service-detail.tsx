@@ -1,4 +1,5 @@
 import { SEO } from "@/components/SEO";
+import { JsonLd, serviceSchema, breadcrumbSchema } from "@/components/JsonLd";
 import { OptimizedImage } from "@/components/OptimizedImage";
 import { useParams } from "wouter";
 import { CheckCircle2, PhoneCall, ArrowLeft } from "lucide-react";
@@ -52,9 +53,14 @@ export default function ServiceDetail() {
   return (
     <>
       <SEO 
-        title={`${title} | Shaheen Locksmith`}
-        description={`Professional ${title.toLowerCase()} services in Islamabad and Rawalpindi. Rapid response, dealer-level equipment, expert technicians.`}
+        title={`${title} in Islamabad | Shaheen Locksmith`}
+        description={`Expert ${title.toLowerCase()} services in Islamabad & Rawalpindi. Rapid mobile response, dealer-level equipment, all car brands supported. Call 0308-5556779.`}
+        keywords={`${title.toLowerCase()} Islamabad, ${title.toLowerCase()} Rawalpindi, automotive locksmith, ${id ? id.replace(/-/g, ' ') : 'locksmith'} Pakistan`}
       />
+      <JsonLd schemas={[
+        serviceSchema(title, `Professional ${title.toLowerCase()} services in Islamabad and Rawalpindi. Rapid response, dealer-level equipment, expert technicians.`, id ?? ''),
+        breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Services", url: "/services" }, { name: title, url: `/services/${id}` }])
+      ]} />
       
       <section className="pt-32 pb-24 border-b border-border bg-card/10 relative overflow-hidden">
         {/* Dynamic Background Image based on Service Category */}

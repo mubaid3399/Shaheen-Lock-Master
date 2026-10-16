@@ -1,4 +1,5 @@
 import { SEO } from "@/components/SEO";
+import { JsonLd, localBusinessSchema, breadcrumbSchema } from "@/components/JsonLd";
 import { OptimizedImage } from "@/components/OptimizedImage";
 import aboutImg from "@/assets/about-workshop.png";
 import { CheckCircle2, ShieldCheck, Target, Users, MapPin } from "lucide-react";
@@ -8,9 +9,11 @@ export default function About() {
   return (
     <>
       <SEO 
-        title="About Us | Shaheen Locksmith"
-        description="Learn about Islamabad's most trusted automotive locksmith. Years of experience in smart key programming and auto lock repair."
+        title="About Shaheen Locksmith | Islamabad's Trusted Auto Locksmith"
+        description="Learn about Shaheen Locksmith — Islamabad's most trusted automotive locksmith. Years of experience in smart key programming, immobilizer repair, and auto lock solutions."
+        keywords="about Shaheen Locksmith, automotive locksmith Islamabad, key programming specialist, car security expert Pakistan"
       />
+      <JsonLd schemas={[localBusinessSchema, breadcrumbSchema([{ name: "Home", url: "/" }, { name: "About Us", url: "/about" }])]} />
       
       <section className="pt-32 pb-24 border-b border-border bg-card/30 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />

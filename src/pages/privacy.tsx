@@ -8,6 +8,7 @@ export default function Privacy() {
       <SEO 
         title="Privacy Policy | Shaheen Locksmith"
         description="Read the Privacy Policy of Shaheen Locksmith to understand how we collect, use, and protect your personal information."
+        keywords="Shaheen Locksmith privacy policy, auto locksmith data policy, locksmith terms Pakistan"
       />
       
       <section className="pt-32 pb-20 border-b border-border bg-card/30 relative overflow-hidden">

@@ -7,8 +7,9 @@ export default function NotFound() {
   return (
     <>
       <SEO 
-        title="404 Page Not Found | Shaheen Lock Master"
-        description="The page you are looking for does not exist or has been locked. Return to Shaheen Lock Master home for auto locksmith services in Islamabad and Rawalpindi."
+        title="404 Page Not Found | Shaheen Locksmith"
+        description="The page you are looking for does not exist. Return to Shaheen Locksmith home for auto locksmith services in Islamabad and Rawalpindi."
+        noIndex={true}
       />
 
       <div className="min-h-[90vh] w-full flex flex-col items-center justify-center relative z-10 px-4">

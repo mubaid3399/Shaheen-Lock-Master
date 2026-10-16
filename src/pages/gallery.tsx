@@ -1,4 +1,5 @@
 import { SEO } from "@/components/SEO";
+import { JsonLd, localBusinessSchema, breadcrumbSchema } from "@/components/JsonLd";
 import { OptimizedImage } from "@/components/OptimizedImage";
 
 import gallery1 from "@/assets/gallery-1.png";
@@ -28,9 +29,11 @@ export default function Gallery() {
   return (
     <>
       <SEO 
-        title="Gallery | Shaheen Locksmith"
-        description="View our gallery of professional automotive locksmith equipment, smart keys, and repair work in Islamabad."
+        title="Gallery | Automotive Locksmith Work | Shaheen Locksmith Islamabad"
+        description="View our gallery of professional automotive locksmith equipment, smart key programming, ignition repair, and key cutting work in Islamabad."
+        keywords="locksmith gallery Islamabad, smart key photos, car key programming, automotive locksmith work Pakistan"
       />
+      <JsonLd schemas={[localBusinessSchema, breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Gallery", url: "/gallery" }])]} />
       
       <section className="pt-32 pb-24 border-b border-border bg-card/30">
         <div className="container mx-auto px-4 md:px-6 text-center max-w-3xl">

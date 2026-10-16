@@ -224,22 +224,40 @@ export default function Reviews() {
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Shaheen Lock Master",
-    "image": "https://www.shaheenlocksmith.com/android-chrome-512x512.png",
-    "telephone": "0345-7507053",
+    "@type": ["LocalBusiness", "Locksmith"],
+    "name": "Shaheen Locksmith",
+    "alternateName": "Shaheen Lock Master",
+    "image": "https://www.shaheenlocksmith.com/opengraph.jpg",
+    "url": "https://www.shaheenlocksmith.com",
+    "telephone": "+92-308-5556779",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "Shop #1-2, Auto Market F-10/4 Markaz",
       "addressLocality": "Islamabad",
-      "addressRegion": "Federal",
+      "addressRegion": "Islamabad Capital Territory",
+      "postalCode": "44000",
       "addressCountry": "PK"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "33.6844",
-      "longitude": "73.0479"
+      "latitude": "33.7294",
+      "longitude": "73.0931"
     },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Saturday"],
+        "opens": "09:00",
+        "closes": "21:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Sunday"],
+        "opens": "10:00",
+        "closes": "19:00"
+      }
+    ],
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
@@ -252,8 +270,9 @@ export default function Reviews() {
   return (
     <>
       <SEO 
-        title="Customer Reviews & Ratings | Shaheen Lock Master"
-        description="Read reviews from verified car owners in Islamabad and Rawalpindi. 5-star rated automotive locksmith service specializing in smart key programming and lockouts."
+        title="Customer Reviews & Ratings | Shaheen Locksmith Islamabad"
+        description="Read 350+ verified reviews from car owners in Islamabad & Rawalpindi. 4.9-star rated automotive locksmith — smart key programming, vehicle lockouts, and immobilizer repair."
+        keywords="Shaheen Locksmith reviews, auto locksmith Islamabad ratings, car key programming reviews, locksmith Rawalpindi testimonials"
       />
 
       {/* JSON-LD SEO Structured Data Injection */}
