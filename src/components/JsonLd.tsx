@@ -112,6 +112,23 @@ export const homeFaqSchema = {
   ]
 };
 
+// ─── FAQPage schema generator ────────────────────────────────────────────────
+
+export function faqPageSchema(faqs: { question: string; answer: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+}
+
 // ─── BreadcrumbList schema generator ─────────────────────────────────────────
 
 export function breadcrumbSchema(crumbs: { name: string; url: string }[]) {

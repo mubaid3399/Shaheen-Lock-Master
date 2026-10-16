@@ -1,10 +1,17 @@
 import { SEO } from "@/components/SEO";
-import { JsonLd, serviceSchema, breadcrumbSchema } from "@/components/JsonLd";
+import { JsonLd, serviceSchema, breadcrumbSchema, faqPageSchema } from "@/components/JsonLd";
 import { OptimizedImage } from "@/components/OptimizedImage";
 import { useParams } from "wouter";
-import { CheckCircle2, PhoneCall, ArrowLeft } from "lucide-react";
+import { CheckCircle2, PhoneCall, ArrowLeft, HelpCircle } from "lucide-react";
 import { Link } from "wouter";
 import { SiWhatsapp } from "react-icons/si";
+import { serviceFaqs } from "@/data/serviceFaqs";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 // Gallery Category Images for Background
 import gallery2 from "@/assets/gallery-2.png"; // Key Creation / Duplication
@@ -49,6 +56,7 @@ export default function ServiceDetail() {
   const { id } = useParams();
   const title = id ? id.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') : "Service Details";
   const bgImage = id ? bgImages[id] : null;
+  const faqs = id && serviceFaqs[id] ? serviceFaqs[id] : [];
   
   return (
     <>
@@ -59,7 +67,8 @@ export default function ServiceDetail() {
       />
       <JsonLd schemas={[
         serviceSchema(title, `Professional ${title.toLowerCase()} services in Islamabad and Rawalpindi. Rapid response, dealer-level equipment, expert technicians.`, id ?? ''),
-        breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Services", url: "/services" }, { name: title, url: `/services/${id}` }])
+        breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Services", url: "/services" }, { name: title, url: `/services/${id}` }]),
+        ...(faqs.length > 0 ? [faqPageSchema(faqs)] : [])
       ]} />
       
       <section className="pt-32 pb-24 border-b border-border bg-card/10 relative overflow-hidden">
@@ -144,6 +153,41 @@ export default function ServiceDetail() {
                    ))}
                 </div>
               </div>
+
+              {faqs.length > 0 && (
+                <div className="pt-8 border-t border-border">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="p-2.5 rounded-xl bg-primary/10 text-primary">
+                      <HelpCircle className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground">
+                        Frequently Asked Questions
+                      </h2>
+                      <p className="text-sm text-muted-foreground mt-0.5">
+                        Everything you need to know about our {title.toLowerCase()} services in Islamabad &amp; Rawalpindi.
+                      </p>
+                    </div>
+                  </div>
+
+                  <Accordion type="single" collapsible className="w-full space-y-3 mt-6">
+                    {faqs.map((faq, idx) => (
+                      <AccordionItem
+                        key={idx}
+                        value={`faq-${idx}`}
+                        className="bg-card border border-border px-5 rounded-xl transition-all hover:border-primary/40 data-[state=open]:border-primary/60 data-[state=open]:bg-secondary/20"
+                      >
+                        <AccordionTrigger className="text-left font-display font-semibold text-base py-4 hover:no-underline hover:text-primary">
+                          {faq.question}
+                        </AccordionTrigger>
+                        <AccordionContent className="text-muted-foreground leading-relaxed text-sm pt-1 pb-4">
+                          {faq.answer}
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </div>
+              )}
 
             </div>
 

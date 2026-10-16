@@ -1,7 +1,14 @@
 import { SEO } from "@/components/SEO";
-import { JsonLd, localBusinessSchema, breadcrumbSchema } from "@/components/JsonLd";
+import { JsonLd, localBusinessSchema, breadcrumbSchema, faqPageSchema } from "@/components/JsonLd";
 import { Link } from "wouter";
-import { ArrowRight, KeyRound, ShieldCheck, Wrench, Battery, Unlock, Zap, Car, Settings } from "lucide-react";
+import { ArrowRight, KeyRound, ShieldCheck, Wrench, Zap, Settings, HelpCircle } from "lucide-react";
+import { generalServicesFaqs } from "@/data/serviceFaqs";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export default function Services() {
   const serviceCategories = [
@@ -64,7 +71,11 @@ export default function Services() {
         description="Comprehensive automotive locksmith services in Islamabad & Rawalpindi — smart key programming, immobilizer repair, car lockouts, ignition repair, and key duplication. All brands supported."
         keywords="automotive locksmith services Islamabad, smart key programming, car key duplication, ignition repair Islamabad, immobilizer repair, door lock replacement"
       />
-      <JsonLd schemas={[localBusinessSchema, breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Services", url: "/services" }])]} />
+      <JsonLd schemas={[
+        localBusinessSchema,
+        breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Services", url: "/services" }]),
+        faqPageSchema(generalServicesFaqs)
+      ]} />
       
       <section className="pt-32 pb-24 border-b border-border bg-card/30 relative overflow-hidden">
          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-background to-background pointer-events-none" />
@@ -105,6 +116,41 @@ export default function Services() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Services FAQ Section */}
+      <section className="py-24 bg-card/40 border-t border-border">
+        <div className="container mx-auto px-4 md:px-6 max-w-4xl">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 p-2 px-4 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">
+              <HelpCircle className="w-4 h-4" />
+              Frequently Asked Questions
+            </div>
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-4">
+              Common Questions About Our Services
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Clear, transparent answers about our automotive locksmith capabilities, mobile response times, and pricing in Islamabad and Rawalpindi.
+            </p>
+          </div>
+
+          <Accordion type="single" collapsible className="w-full space-y-4">
+            {generalServicesFaqs.map((faq, idx) => (
+              <AccordionItem
+                key={idx}
+                value={`services-faq-${idx}`}
+                className="bg-card border border-border px-6 rounded-2xl transition-all hover:border-primary/40 data-[state=open]:border-primary/60 data-[state=open]:bg-secondary/30 shadow-sm"
+              >
+                <AccordionTrigger className="text-left font-display font-semibold text-base md:text-lg py-5 hover:no-underline hover:text-primary">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed text-sm md:text-base pt-1 pb-5">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
 
